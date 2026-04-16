@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>スタジオ屋根リノベ計画</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  :root {
+    --ink: #1a1410;
+    --paper: #f5f0e8;
+    --rust: #c0392b;
+    --steel: #7f8c8d;
+    --accent: #e67e22;
+    --light: #faf7f2;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Noto Serif JP', serif;
+    min-height: 100vh;
+    padding: 40px 20px;
+  }
+
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--light);
+    border: 2px solid var(--ink);
+    position: relative;
+  }
+
+  /* ヘッダー */
+  .header {
+    border-bottom: 3px solid var(--ink);
+    padding: 32px 40px 24px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 20px;
+  }
+
+  .header-left h1 {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--steel);
+    margin-bottom: 8px;
+    font-family: 'Space Mono', monospace;
+    text-transform: uppercase;
+  }
+
+  .header-left h2 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .header-left h2 span {
+    color: var(--rust);
+  }
+
+  .header-right {
+    text-align: right;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--steel);
+    line-height: 1.8;
+  }
+
+  /* メイングリッド */
+  .main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .cell {
+    padding: 28px 32px;
+    border-right: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+  }
+  .cell:nth-child(2n) { border-right: none; }
+  .cell:nth-last-child(-n+2) { border-bottom: none; }
+
+  .cell-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--steel);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  /* 屋根断面図 */
+  .svg-wrap {
+    width: 100%;
+  }
+
+  svg text {
+    font-family: 'Space Mono', monospace;
+  }
+
+  /* 材料リスト */
+  .material-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px 0;
+    border-bottom: 1px dashed #ccc;
+  }
+  .material-item:last-child { border-bottom: none; }
+
+  .mat-name {
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .mat-sub {
+    font-size: 10px;
+    color: var(--steel);
+    margin-top: 2px;
+    font-family: 'Space Mono', monospace;
+  }
+  .mat-qty {
+    font-family: 'Space Mono', monospace;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--rust);
+    white-space: nowrap;
+    margin-left: 12px;
+  }
+  .mat-unit {
+    font-size: 11px;
+    color: var(--steel);
+    margin-left: 4px;
+  }
+
+  /* 寸法メモ */
+  .dim-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .dim-box {
+    background: var(--paper);
+    border: 1px solid #ccc;
+    padding: 12px 14px;
+  }
+  .dim-label {
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    color: var(--steel);
+    margin-bottom: 4px;
+  }
+  .dim-val {
+    font-family: 'Space Mono', monospace;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .dim-unit {
+    font-size: 11px;
+    color: var(--steel);
+    margin-left: 2px;
+  }
+
+  /* 工法メモ */
+  .method-list {
+    list-style: none;
+  }
+  .method-list li {
+    display: flex;
+    gap: 12px;
+    padding: 9px 0;
+    border-bottom: 1px dashed #ccc;
+    font-size: 13px;
+    line-height: 1.5;
+    align-items: flex-start;
+  }
+  .method-list li:last-child { border-bottom: none; }
+  .step-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--rust);
+    font-weight: 700;
+    white-space: nowrap;
+    margin-top: 2px;
+  }
+
+  /* フッター */
+  .footer {
+    border-top: 3px solid var(--ink);
+    padding: 16px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--ink);
+    color: var(--light);
+  }
+  .footer-note {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    opacity: 0.7;
+  }
+  .footer-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--accent);
+  }
+
+  /* 全幅セル */
+  .cell-full {
+    grid-column: 1 / -1;
+    border-right: none;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ヘッダー -->
+  <div class="header">
+    <div class="header-left">
+      <h1>Studio Roof Renovation Plan</h1>
+      <h2>スタジオ<br>屋根リノベ<span>計画書</span></h2>
+    </div>
+    <div class="header-right">
+      Onduline Classic<br>
+      重ね葺き工法<br>
+      約30㎡
+    </div>
+  </div>
+
+  <div class="main">
+
+    <!-- 断面図 -->
+    <div class="cell">
+      <div class="cell-label">Cross Section — 断面構成</div>
+      <div class="svg-wrap">
+        <svg viewBox="0 0 340 220" width="100%" xmlns="http://www.w3.org/2000/svg">
+          
+          <!-- 既存立平葺き -->
+          <rect x="30" y="140" width="280" height="12" fill="#8B7355" rx="1"/>
+          <!-- 立平のハゼ線 -->
+          <line x1="60" y1="140" x2="60" y2="152" stroke="#5a4a2a" stroke-width="2"/>
+          <line x1="105" y1="140" x2="105" y2="152" stroke="#5a4a2a" stroke-width="2"/>
+          <line x1="150" y1="140" x2="150" y2="152" stroke="#5a4a2a" stroke-width="2"/>
+          <line x1="195" y1="140" x2="195" y2="152" stroke="#5a4a2a" stroke-width="2"/>
+          <line x1="240" y1="140" x2="240" y2="152" stroke="#5a4a2a" stroke-width="2"/>
+          <line x1="285" y1="140" x2="285" y2="152" stroke="#5a4a2a" stroke-width="2"/>
+
+          <!-- ラベル：既存 -->
+          <text x="170" y="168" text-anchor="middle" font-size="9" fill="#7f8c8d">既存立平葺き（ハゼピッチ 45.5cm）</text>
+
+          <!-- 新垂木（ハゼの上） -->
+          <rect x="52" y="122" width="16" height="18" fill="#c0392b" rx="1" opacity="0.9"/>
+          <rect x="97" y="122" width="16" height="18" fill="#c0392b" rx="1" opacity="0.9"/>
+          <rect x="142" y="122" width="16" height="18" fill="#c0392b" rx="1" opacity="0.9"/>
+          <rect x="187" y="122" width="16" height="18" fill="#c0392b" rx="1" opacity="0.9"/>
+          <rect x="232" y="122" width="16" height="18" fill="#c0392b" rx="1" opacity="0.9"/>
+          <rect x="277" y="122" width="16" height="18" fill="#c0392b" rx="1" opacity="0.9"/>
+
+          <!-- ラベル：新垂木 -->
+          <line x1="60" y1="116" x2="60" y2="108" stroke="#c0392b" stroke-width="1" stroke-dasharray="3,2"/>
+          <text x="60" y="104" text-anchor="middle" font-size="9" fill="#c0392b">新垂木</text>
+          <text x="60" y="94" text-anchor="middle" font-size="8" fill="#c0392b">5cm幅</text>
+
+          <!-- オンデュリン -->
+          <path d="M30,90 Q50,80 70,90 Q90,100 110,90 Q130,80 150,90 Q170,100 190,90 Q210,80 230,90 Q250,100 270,90 Q290,80 310,90 L310,108 Q290,98 270,108 Q250,118 230,108 Q210,98 190,108 Q170,118 150,108 Q130,98 110,108 Q90,118 70,108 Q50,98 30,108 Z" fill="#2c3e50" opacity="0.85"/>
+
+          <!-- ラベル：オンデュリン -->
+          <text x="170" y="78" text-anchor="middle" font-size="9" fill="#2c3e50">Onduline Classic（波板）</text>
+
+          <!-- ビス -->
+          <line x1="60" y1="108" x2="60" y2="140" stroke="#e67e22" stroke-width="1.5"/>
+          <circle cx="60" cy="140" r="3" fill="#e67e22"/>
+          <text x="72" y="136" font-size="8" fill="#e67e22">テクスビス</text>
+          <text x="72" y="145" font-size="8" fill="#e67e22">65〜75mm</text>
+          <text x="72" y="154" font-size="7" fill="#7f8c8d">+ コーキング</text>
+
+          <!-- 矢印：厚み -->
+          <line x1="18" y1="90" x2="18" y2="152" stroke="#1a1410" stroke-width="1"/>
+          <line x1="14" y1="90" x2="22" y2="90" stroke="#1a1410" stroke-width="1"/>
+          <line x1="14" y1="152" x2="22" y2="152" stroke="#1a1410" stroke-width="1"/>
+          <text x="12" y="126" text-anchor="middle" font-size="8" fill="#1a1410" transform="rotate(-90,12,126)">積層構成</text>
+
+        </svg>
+      </div>
+    </div>
+
+    <!-- 材料リスト -->
+    <div class="cell">
+      <div class="cell-label">Materials — 材料リスト</div>
+      
+      <div class="material-item">
+        <div>
+          <div class="mat-name">オンデュリン クラシックシート</div>
+          <div class="mat-sub">200×95cm / 重ね代：縦17cm 横16cm</div>
+        </div>
+        <div>
+          <span class="mat-qty">36</span><span class="mat-unit">枚</span>
+          <div class="mat-sub" style="text-align:right">+予備2〜3枚推奨</div>
+        </div>
+      </div>
+
+      <div class="material-item">
+        <div>
+          <div class="mat-name">棟板（リッジ）</div>
+          <div class="mat-sub">有効長さ100cm / 重ね代10cm込み</div>
+        </div>
+        <div>
+          <span class="mat-qty">7</span><span class="mat-unit">枚</span>
+        </div>
+      </div>
+
+      <div class="material-item">
+        <div>
+          <div class="mat-name">専用スクリュー釘</div>
+          <div class="mat-sub">シート用 / 1枚あたり約20本</div>
+        </div>
+        <div>
+          <span class="mat-qty">800</span><span class="mat-unit">本+</span>
+        </div>
+      </div>
+
+      <div class="material-item">
+        <div>
+          <div class="mat-name">テクスビス（EPDM付）</div>
+          <div class="mat-sub">65〜75mm / 垂木→鋼板貫通用</div>
+        </div>
+        <div>
+          <span class="mat-qty">250</span><span class="mat-unit">本</span>
+        </div>
+      </div>
+
+      <div class="material-item">
+        <div>
+          <div class="mat-name">変成シリコンコーキング</div>
+          <div class="mat-sub">屋外・金属対応 / ビス穴防水</div>
+        </div>
+        <div>
+          <span class="mat-qty">2〜3</span><span class="mat-unit">本</span>
+        </div>
+      </div>
+
+      <div class="material-item">
+        <div>
+          <div class="mat-name">垂木材</div>
+          <div class="mat-sub">5cm幅 × 15本 / 横方向打ち</div>
+        </div>
+        <div>
+          <span class="mat-qty">15</span><span class="mat-unit">本</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 寸法 -->
+    <div class="cell">
+      <div class="cell-label">Dimensions — 基本寸法</div>
+      <div class="dim-grid">
+        <div class="dim-box">
+          <div class="dim-label">棟方向（幅）</div>
+          <div class="dim-val">6.85<span class="dim-unit">m</span></div>
+        </div>
+        <div class="dim-box">
+          <div class="dim-label">流れ長さ（片面）</div>
+          <div class="dim-val">3.48<span class="dim-unit">m</span></div>
+        </div>
+        <div class="dim-box">
+          <div class="dim-label">ハゼピッチ</div>
+          <div class="dim-val">45.5<span class="dim-unit">cm</span></div>
+        </div>
+        <div class="dim-box">
+          <div class="dim-label">垂木ピッチ</div>
+          <div class="dim-val">〜23<span class="dim-unit">cm</span></div>
+        </div>
+        <div class="dim-box">
+          <div class="dim-label">シート段数（片面）</div>
+          <div class="dim-val">2<span class="dim-unit">段</span></div>
+        </div>
+        <div class="dim-box">
+          <div class="dim-label">シート枚数（片面）</div>
+          <div class="dim-val">18<span class="dim-unit">枚</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 工法ポイント -->
+    <div class="cell">
+      <div class="cell-label">Method Notes — 工法ポイント</div>
+      <ul class="method-list">
+        <li>
+          <span class="step-num">01</span>
+          <span>既存立平葺きのハゼ（継ぎ目）の上に垂木を横方向に打つ。ハゼは二重鋼板で最も硬く安定した下地になる。</span>
+        </li>
+        <li>
+          <span class="step-num">02</span>
+          <span>テクスビス（65〜75mm）で垂木→鋼板を貫通固定。打った直後に変成シリコンでビス頭を防水処理。</span>
+        </li>
+        <li>
+          <span class="step-num">03</span>
+          <span>オンデュリンは軒側から棟に向かって葺き上げる。縦重ね17cm、横重ね1山（約16cm）厳守。</span>
+        </li>
+        <li>
+          <span class="step-num">04</span>
+          <span>垂木ピッチ約23cmは推奨60cm以内をクリア。ハゼピッチ45.5cmも垂木幅5cmに対して十分な余裕あり。</span>
+        </li>
+        <li>
+          <span class="step-num">05</span>
+          <span>棟部は専用棟板（リッジ）で仕上げ。棟板も重ね代10cmで7枚並べて全長6.85mをカバー。</span>
+        </li>
+      </ul>
+    </div>
+
+  </div><!-- /main -->
+
+  <div class="footer">
+    <div class="footer-note">Studio Roof / Onduline Classic / DIY Plan</div>
+    <div class="footer-tag">甲州市 — 2025</div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -7,7 +7,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  
   :root {
     --ink: #1a1410;
     --paper: #f5f0e8;
@@ -16,7 +15,6 @@
     --accent: #e67e22;
     --light: #faf7f2;
   }
-
   body {
     background: var(--paper);
     color: var(--ink);
@@ -24,16 +22,12 @@
     min-height: 100vh;
     padding: 40px 20px;
   }
-
   .page {
     max-width: 900px;
     margin: 0 auto;
     background: var(--light);
     border: 2px solid var(--ink);
-    position: relative;
   }
-
-  /* ヘッダー */
   .header {
     border-bottom: 3px solid var(--ink);
     padding: 32px 40px 24px;
@@ -42,197 +36,91 @@
     align-items: end;
     gap: 20px;
   }
-
   .header-left h1 {
-    font-size: 11px;
-    letter-spacing: 0.3em;
-    color: var(--steel);
-    margin-bottom: 8px;
-    font-family: 'DM Mono', monospace;
-    text-transform: uppercase;
+    font-size: 11px; letter-spacing: 0.3em; color: var(--steel);
+    margin-bottom: 8px; font-family: 'DM Mono', monospace; text-transform: uppercase;
   }
-
-  .header-left h2 {
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 1.1;
-  }
-
-  .header-left h2 span {
-    color: var(--rust);
-  }
-
+  .header-left h2 { font-size: 32px; font-weight: 700; line-height: 1.1; }
+  .header-left h2 span { color: var(--rust); }
   .header-right {
-    text-align: right;
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: var(--steel);
-    line-height: 1.8;
+    text-align: right; font-family: 'DM Mono', monospace;
+    font-size: 11px; color: var(--steel); line-height: 1.8;
   }
-
-  /* メイングリッド */
-  .main {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-  }
-
+  .main { display: grid; grid-template-columns: 1fr 1fr; }
   .cell {
-    padding: 28px 32px;
+    padding: 24px 28px;
     border-right: 1px solid var(--ink);
     border-bottom: 1px solid var(--ink);
   }
   .cell:nth-child(2n) { border-right: none; }
   .cell:nth-last-child(-n+2) { border-bottom: none; }
-
   .cell-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--steel);
-    margin-bottom: 16px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid #ddd;
+    font-family: 'DM Mono', monospace; font-size: 9px;
+    letter-spacing: 0.3em; text-transform: uppercase; color: var(--steel);
+    margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid #ddd;
   }
-
-  /* 屋根断面図 */
-  .svg-wrap {
-    width: 100%;
-  }
-
-  svg text {
-    font-family: 'DM Mono', monospace;
-  }
+  svg text { font-family: 'DM Mono', monospace; }
 
   /* 材料リスト */
   .material-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding: 10px 0;
-    border-bottom: 1px dashed #ccc;
+    display: grid; grid-template-columns: 1fr auto;
+    align-items: center; padding: 7px 0;
+    border-bottom: 1px dashed #ccc; gap: 6px;
   }
   .material-item:last-child { border-bottom: none; }
+  .mat-name { font-size: 12px; font-weight: 700; }
+  .mat-sub { font-size: 9px; color: var(--steel); margin-top: 1px; font-family: 'DM Mono', monospace; }
+  .mat-nums { text-align: right; white-space: nowrap; }
+  .mat-qty { font-family: 'DM Mono', monospace; font-size: 14px; font-weight: 700; color: var(--rust); }
+  .mat-unit { font-size: 9px; color: var(--steel); margin-left: 1px; }
+  .mat-price { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--steel); margin-top: 1px; }
+  .mat-total { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 700; color: var(--ink); }
+  .materials-footer {
+    display: flex; justify-content: flex-end; align-items: baseline;
+    padding-top: 10px; border-top: 2px solid var(--ink); margin-top: 6px; gap: 8px;
+  }
+  .materials-footer-label { font-size: 10px; color: var(--steel); }
+  .materials-footer-total { font-family: 'DM Mono', monospace; font-size: 22px; font-weight: 700; color: var(--rust); }
+  .materials-note { font-size: 9px; color: var(--steel); margin-top: 5px; font-family: 'DM Mono', monospace; text-align: right; }
 
-  .mat-name {
-    font-size: 13px;
-    font-weight: 700;
-  }
-  .mat-sub {
-    font-size: 10px;
-    color: var(--steel);
-    margin-top: 2px;
-    font-family: 'DM Mono', monospace;
-  }
-  .mat-qty {
-    font-family: 'DM Mono', monospace;
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--rust);
-    white-space: nowrap;
-    margin-left: 12px;
-  }
-  .mat-unit {
-    font-size: 11px;
-    color: var(--steel);
-    margin-left: 4px;
-  }
+  /* 寸法 */
+  .dim-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .dim-box { background: var(--paper); border: 1px solid #ccc; padding: 10px 12px; }
+  .dim-label { font-size: 9px; letter-spacing: 0.1em; color: var(--steel); margin-bottom: 3px; }
+  .dim-val { font-family: 'DM Mono', monospace; font-size: 18px; font-weight: 700; }
+  .dim-unit { font-size: 10px; color: var(--steel); margin-left: 2px; }
 
-  /* 寸法メモ */
-  .dim-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-  .dim-box {
-    background: var(--paper);
-    border: 1px solid #ccc;
-    padding: 12px 14px;
-  }
-  .dim-label {
-    font-size: 9px;
-    letter-spacing: 0.15em;
-    color: var(--steel);
-    margin-bottom: 4px;
-  }
-  .dim-val {
-    font-family: 'DM Mono', monospace;
-    font-size: 20px;
-    font-weight: 700;
-  }
-  .dim-unit {
-    font-size: 11px;
-    color: var(--steel);
-    margin-left: 2px;
-  }
-
-  /* 工法メモ */
-  .method-list {
-    list-style: none;
-  }
+  /* 工法 */
+  .method-list { list-style: none; }
   .method-list li {
-    display: flex;
-    gap: 12px;
-    padding: 9px 0;
-    border-bottom: 1px dashed #ccc;
-    font-size: 13px;
-    line-height: 1.5;
-    align-items: flex-start;
+    display: flex; gap: 10px; padding: 7px 0;
+    border-bottom: 1px dashed #ccc; font-size: 12px; line-height: 1.5; align-items: flex-start;
   }
   .method-list li:last-child { border-bottom: none; }
   .step-num {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: var(--rust);
-    font-weight: 700;
-    white-space: nowrap;
-    margin-top: 2px;
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    color: var(--rust); font-weight: 700; white-space: nowrap; margin-top: 2px;
   }
 
   /* フッター */
   .footer {
-    border-top: 3px solid var(--ink);
-    padding: 16px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--ink);
-    color: var(--light);
+    border-top: 3px solid var(--ink); padding: 14px 40px;
+    display: flex; justify-content: space-between; align-items: center;
+    background: var(--ink); color: var(--light);
   }
-  .footer-note {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    opacity: 0.7;
-  }
-  .footer-tag {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    color: var(--accent);
-  }
-
-  /* 全幅セル */
-  .cell-full {
-    grid-column: 1 / -1;
-    border-right: none;
-  }
+  .footer-note { font-family: 'DM Mono', monospace; font-size: 10px; opacity: 0.7; }
+  .footer-tag { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent); }
 </style>
 </head>
 <body>
 <div class="page">
 
-  <!-- ヘッダー -->
   <div class="header">
     <div class="header-left">
       <h1>Studio Roof Renovation Plan</h1>
       <h2>スタジオ<br>屋根リノベ<span>計画書</span></h2>
     </div>
-    <div class="header-right">
-      Onduline Classic<br>
-      重ね葺き工法<br>
-      約30㎡
-    </div>
+    <div class="header-right">Onduline Classic<br>重ね葺き工法<br>約30㎡</div>
   </div>
 
   <div class="main">
@@ -240,122 +128,118 @@
     <!-- 断面図 -->
     <div class="cell">
       <div class="cell-label">Cross Section — 断面構成</div>
-      <div class="svg-wrap">
-        <svg viewBox="0 0 340 220" width="100%" xmlns="http://www.w3.org/2000/svg">
-          
-          <!-- 既存立平葺き -->
-          <rect x="30" y="140" width="280" height="12" fill="#8B7355" rx="1"/>
-          <!-- 立平のハゼ線 -->
-          <line x1="60" y1="140" x2="60" y2="152" stroke="#5a4a2a" stroke-width="2"/>
-          <line x1="105" y1="140" x2="105" y2="152" stroke="#5a4a2a" stroke-width="2"/>
-          <line x1="150" y1="140" x2="150" y2="152" stroke="#5a4a2a" stroke-width="2"/>
-          <line x1="195" y1="140" x2="195" y2="152" stroke="#5a4a2a" stroke-width="2"/>
-          <line x1="240" y1="140" x2="240" y2="152" stroke="#5a4a2a" stroke-width="2"/>
-          <line x1="285" y1="140" x2="285" y2="152" stroke="#5a4a2a" stroke-width="2"/>
-
-          <!-- ラベル：既存 -->
-          <text x="170" y="168" text-anchor="middle" font-size="9" fill="#7f8c8d">既存立平葺き（ハゼピッチ 45.5cm）</text>
-
-          <!-- 新垂木（ハゼの上） -->
-          <rect x="52" y="122" width="16" height="18" fill="#c0392b" rx="1" opacity="0.9"/>
-          <rect x="97" y="122" width="16" height="18" fill="#c0392b" rx="1" opacity="0.9"/>
-          <rect x="142" y="122" width="16" height="18" fill="#c0392b" rx="1" opacity="0.9"/>
-          <rect x="187" y="122" width="16" height="18" fill="#c0392b" rx="1" opacity="0.9"/>
-          <rect x="232" y="122" width="16" height="18" fill="#c0392b" rx="1" opacity="0.9"/>
-          <rect x="277" y="122" width="16" height="18" fill="#c0392b" rx="1" opacity="0.9"/>
-
-          <!-- ラベル：新垂木 -->
-          <line x1="60" y1="116" x2="60" y2="108" stroke="#c0392b" stroke-width="1" stroke-dasharray="3,2"/>
-          <text x="60" y="104" text-anchor="middle" font-size="9" fill="#c0392b">新垂木</text>
-          <text x="60" y="94" text-anchor="middle" font-size="8" fill="#c0392b">5cm幅</text>
-
-          <!-- オンデュリン -->
-          <path d="M30,90 Q50,80 70,90 Q90,100 110,90 Q130,80 150,90 Q170,100 190,90 Q210,80 230,90 Q250,100 270,90 Q290,80 310,90 L310,108 Q290,98 270,108 Q250,118 230,108 Q210,98 190,108 Q170,118 150,108 Q130,98 110,108 Q90,118 70,108 Q50,98 30,108 Z" fill="#2c3e50" opacity="0.85"/>
-
-          <!-- ラベル：オンデュリン -->
-          <text x="170" y="78" text-anchor="middle" font-size="9" fill="#2c3e50">Onduline Classic（波板）</text>
-
-          <!-- ビス -->
-          <line x1="60" y1="108" x2="60" y2="140" stroke="#e67e22" stroke-width="1.5"/>
-          <circle cx="60" cy="140" r="3" fill="#e67e22"/>
-          <text x="72" y="136" font-size="8" fill="#e67e22">テクスビス</text>
-          <text x="72" y="145" font-size="8" fill="#e67e22">65〜75mm</text>
-          <text x="72" y="154" font-size="7" fill="#7f8c8d">+ コーキング</text>
-
-          <!-- 矢印：厚み -->
-          <line x1="18" y1="90" x2="18" y2="152" stroke="#1a1410" stroke-width="1"/>
-          <line x1="14" y1="90" x2="22" y2="90" stroke="#1a1410" stroke-width="1"/>
-          <line x1="14" y1="152" x2="22" y2="152" stroke="#1a1410" stroke-width="1"/>
-          <text x="12" y="126" text-anchor="middle" font-size="8" fill="#1a1410" transform="rotate(-90,12,126)">積層構成</text>
-
-        </svg>
-      </div>
+      <svg viewBox="0 0 340 220" width="100%" xmlns="http://www.w3.org/2000/svg">
+        <rect x="30" y="140" width="280" height="12" fill="#8B7355" rx="1"/>
+        <line x1="60"  y1="140" x2="60"  y2="152" stroke="#5a4a2a" stroke-width="2"/>
+        <line x1="105" y1="140" x2="105" y2="152" stroke="#5a4a2a" stroke-width="2"/>
+        <line x1="150" y1="140" x2="150" y2="152" stroke="#5a4a2a" stroke-width="2"/>
+        <line x1="195" y1="140" x2="195" y2="152" stroke="#5a4a2a" stroke-width="2"/>
+        <line x1="240" y1="140" x2="240" y2="152" stroke="#5a4a2a" stroke-width="2"/>
+        <line x1="285" y1="140" x2="285" y2="152" stroke="#5a4a2a" stroke-width="2"/>
+        <text x="170" y="168" text-anchor="middle" font-size="9" fill="#7f8c8d">既存立平葺き（ハゼピッチ 45.5cm）</text>
+        <rect x="52"  y="122" width="16" height="18" fill="#c0392b" rx="1" opacity="0.9"/>
+        <rect x="97"  y="122" width="16" height="18" fill="#c0392b" rx="1" opacity="0.9"/>
+        <rect x="142" y="122" width="16" height="18" fill="#c0392b" rx="1" opacity="0.9"/>
+        <rect x="187" y="122" width="16" height="18" fill="#c0392b" rx="1" opacity="0.9"/>
+        <rect x="232" y="122" width="16" height="18" fill="#c0392b" rx="1" opacity="0.9"/>
+        <rect x="277" y="122" width="16" height="18" fill="#c0392b" rx="1" opacity="0.9"/>
+        <line x1="60" y1="116" x2="60" y2="108" stroke="#c0392b" stroke-width="1" stroke-dasharray="3,2"/>
+        <text x="60" y="104" text-anchor="middle" font-size="9" fill="#c0392b">新垂木</text>
+        <text x="60" y="94"  text-anchor="middle" font-size="8"  fill="#c0392b">5cm幅</text>
+        <path d="M30,90 Q50,80 70,90 Q90,100 110,90 Q130,80 150,90 Q170,100 190,90 Q210,80 230,90 Q250,100 270,90 Q290,80 310,90 L310,108 Q290,98 270,108 Q250,118 230,108 Q210,98 190,108 Q170,118 150,108 Q130,98 110,108 Q90,118 70,108 Q50,98 30,108 Z" fill="#2c3e50" opacity="0.85"/>
+        <text x="170" y="78" text-anchor="middle" font-size="9" fill="#2c3e50">Onduline Classic（波板）</text>
+        <line x1="60" y1="108" x2="60" y2="140" stroke="#e67e22" stroke-width="1.5"/>
+        <circle cx="60" cy="140" r="3" fill="#e67e22"/>
+        <text x="72" y="136" font-size="8" fill="#e67e22">テクスビス 65〜75mm</text>
+        <text x="72" y="148" font-size="7" fill="#7f8c8d">+ コーキング</text>
+        <line x1="18" y1="90" x2="18" y2="152" stroke="#1a1410" stroke-width="1"/>
+        <line x1="14" y1="90" x2="22" y2="90"  stroke="#1a1410" stroke-width="1"/>
+        <line x1="14" y1="152" x2="22" y2="152" stroke="#1a1410" stroke-width="1"/>
+        <text x="12" y="126" text-anchor="middle" font-size="8" fill="#1a1410" transform="rotate(-90,12,126)">積層構成</text>
+      </svg>
     </div>
 
-    <!-- 材料リスト -->
+    <!-- 材料リスト + 費用 -->
     <div class="cell">
-      <div class="cell-label">Materials — 材料リスト</div>
-      
+      <div class="cell-label">Materials &amp; Cost — 材料・概算費用</div>
+
       <div class="material-item">
         <div>
           <div class="mat-name">オンデュリン クラシックシート</div>
-          <div class="mat-sub">200×95cm / 重ね代：縦17cm 横16cm</div>
+          <div class="mat-sub">200×95cm / 縦17cm 横16cm重ね / 予備3枚込</div>
         </div>
-        <div>
-          <span class="mat-qty">36</span><span class="mat-unit">枚</span>
-          <div class="mat-sub" style="text-align:right">+予備2〜3枚推奨</div>
+        <div class="mat-nums">
+          <div><span class="mat-qty">39</span><span class="mat-unit">枚</span></div>
+          <div class="mat-price">@3,300円</div>
+          <div class="mat-total">128,700円</div>
         </div>
       </div>
 
       <div class="material-item">
         <div>
           <div class="mat-name">棟板（リッジ）</div>
-          <div class="mat-sub">有効長さ100cm / 重ね代10cm込み</div>
+          <div class="mat-sub">有効長75cm・重ね15cm / 6.85m分 + 予備</div>
         </div>
-        <div>
-          <span class="mat-qty">7</span><span class="mat-unit">枚</span>
-        </div>
-      </div>
-
-      <div class="material-item">
-        <div>
-          <div class="mat-name">専用スクリュー釘</div>
-          <div class="mat-sub">シート用 / 1枚あたり約20本</div>
-        </div>
-        <div>
-          <span class="mat-qty">800</span><span class="mat-unit">本+</span>
+        <div class="mat-nums">
+          <div><span class="mat-qty">10</span><span class="mat-unit">枚</span></div>
+          <div class="mat-price">@2,300円</div>
+          <div class="mat-total">23,000円</div>
         </div>
       </div>
 
       <div class="material-item">
         <div>
-          <div class="mat-name">テクスビス（EPDM付）</div>
-          <div class="mat-sub">65〜75mm / 垂木→鋼板貫通用</div>
+          <div class="mat-name">専用スクリュー釘（100本入）</div>
+          <div class="mat-sub">シート固定用 / 計800本目安</div>
         </div>
+        <div class="mat-nums">
+          <div><span class="mat-qty">9</span><span class="mat-unit">箱</span></div>
+          <div class="mat-price">@2,100円</div>
+          <div class="mat-total">18,900円</div>
+        </div>
+      </div>
+
+      <div class="material-item">
         <div>
-          <span class="mat-qty">250</span><span class="mat-unit">本</span>
+          <div class="mat-name">テクスビス・EPDM付（50本入）</div>
+          <div class="mat-sub">65〜75mm / 垂木→鋼板貫通固定用</div>
+        </div>
+        <div class="mat-nums">
+          <div><span class="mat-qty">5</span><span class="mat-unit">箱</span></div>
+          <div class="mat-price">@800円</div>
+          <div class="mat-total">4,000円</div>
         </div>
       </div>
 
       <div class="material-item">
         <div>
           <div class="mat-name">変成シリコンコーキング</div>
-          <div class="mat-sub">屋外・金属対応 / ビス穴防水</div>
+          <div class="mat-sub">屋外・金属対応 / ビス穴防水処理</div>
         </div>
-        <div>
-          <span class="mat-qty">2〜3</span><span class="mat-unit">本</span>
+        <div class="mat-nums">
+          <div><span class="mat-qty">3</span><span class="mat-unit">本</span></div>
+          <div class="mat-price">@700円</div>
+          <div class="mat-total">2,100円</div>
         </div>
       </div>
 
       <div class="material-item">
         <div>
-          <div class="mat-name">垂木材</div>
-          <div class="mat-sub">5cm幅 × 15本 / 横方向打ち</div>
+          <div class="mat-name">垂木材（30×40mm・4m）</div>
+          <div class="mat-sub">横方向・ハゼ上打ち / 片面15本×両面</div>
         </div>
-        <div>
-          <span class="mat-qty">15</span><span class="mat-unit">本</span>
+        <div class="mat-nums">
+          <div><span class="mat-qty">30</span><span class="mat-unit">本</span></div>
+          <div class="mat-price">@400円</div>
+          <div class="mat-total">12,000円</div>
         </div>
       </div>
+
+      <div class="materials-footer">
+        <span class="materials-footer-label">概算合計（税込）</span>
+        <span class="materials-footer-total">≈ 189,000円</span>
+      </div>
+      <div class="materials-note">※ ホームセンター参考価格。実売・在庫により変動あり。</div>
     </div>
 
     <!-- 寸法 -->
@@ -393,174 +277,184 @@
     <div class="cell">
       <div class="cell-label">Method Notes — 工法ポイント</div>
       <ul class="method-list">
-        <li>
-          <span class="step-num">01</span>
-          <span>既存立平葺きのハゼ（継ぎ目）の上に垂木を横方向に打つ。ハゼは二重鋼板で最も硬く安定した下地になる。</span>
-        </li>
-        <li>
-          <span class="step-num">02</span>
-          <span>テクスビス（65〜75mm）で垂木→鋼板を貫通固定。打った直後に変成シリコンでビス頭を防水処理。</span>
-        </li>
-        <li>
-          <span class="step-num">03</span>
-          <span>オンデュリンは軒側から棟に向かって葺き上げる。縦重ね17cm、横重ね1山（約16cm）厳守。</span>
-        </li>
-        <li>
-          <span class="step-num">04</span>
-          <span>垂木ピッチ約23cmは推奨60cm以内をクリア。ハゼピッチ45.5cmも垂木幅5cmに対して十分な余裕あり。</span>
-        </li>
-        <li>
-          <span class="step-num">05</span>
-          <span>棟部は専用棟板（リッジ）で仕上げ。棟板も重ね代10cmで7枚並べて全長6.85mをカバー。</span>
-        </li>
+        <li><span class="step-num">01</span><span>既存立平葺きのハゼ（継ぎ目）の上に垂木を横方向に打つ。ハゼは二重鋼板で最も硬く安定した下地になる。</span></li>
+        <li><span class="step-num">02</span><span>テクスビス（65〜75mm）で垂木→鋼板を貫通固定。打った直後に変成シリコンでビス頭を防水処理。</span></li>
+        <li><span class="step-num">03</span><span>オンデュリンは軒側から棟に向かって葺き上げる。縦重ね17cm、横重ね1山（約16cm）厳守。</span></li>
+        <li><span class="step-num">04</span><span>垂木ピッチ約23cmは推奨60cm以内をクリア。ハゼピッチ45.5cmも垂木幅5cmに対して十分余裕あり。</span></li>
+        <li><span class="step-num">05</span><span>棟部は専用棟板（リッジ）で仕上げ。重ね代15cmで両面の上端にまたがせて固定。</span></li>
       </ul>
     </div>
 
   </div><!-- /main -->
 
-  <!-- 貼り順図解 全幅 -->
+  <!-- 葺き順図解 -->
   <div style="border-top: 3px solid var(--ink); padding: 28px 32px 32px;">
-    <div class="cell-label" style="margin-bottom:20px;">Laying Order — 葺き順図解</div>
+    <div class="cell-label" style="margin-bottom:20px;">Laying Order — 葺き順図解（片面）</div>
 
-    <svg viewBox="0 0 820 340" width="100%" xmlns="http://www.w3.org/2000/svg" style="display:block;">
-
-      <!-- ===== 屋根の輪郭（平面・俯瞰） ===== -->
-      <!-- 背景グリッド（垂木ライン） -->
-      <rect x="40" y="30" width="740" height="280" fill="#f0ece2" stroke="#ccc" stroke-width="0.5"/>
-
-      <!-- 垂木ライン（横方向・15本） -->
-      <line x1="40"  y1="48"  x2="780" y2="48"  stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
-      <line x1="40"  y1="67"  x2="780" y2="67"  stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
-      <line x1="40"  y1="86"  x2="780" y2="86"  stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
-      <line x1="40"  y1="105" x2="780" y2="105" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
-      <line x1="40"  y1="124" x2="780" y2="124" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
-      <line x1="40"  y1="143" x2="780" y2="143" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
-      <line x1="40"  y1="162" x2="780" y2="162" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
-      <line x1="40"  y1="181" x2="780" y2="181" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
-      <line x1="40"  y1="200" x2="780" y2="200" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
-      <line x1="40"  y1="219" x2="780" y2="219" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
-      <line x1="40"  y1="238" x2="780" y2="238" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
-      <line x1="40"  y1="257" x2="780" y2="257" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
-      <line x1="40"  y1="276" x2="780" y2="276" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
-      <line x1="40"  y1="295" x2="780" y2="295" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
-
-      <!-- ===== オンデュリンシート（俯瞰）===== -->
-      <!-- 
-        片面：幅6.85m → 9枚横、2段縦
-        図面上：幅740px、高さ280px
-        有効幅：740/9 ≒ 82px、実幅（重ね含）≒ 98px
-        段1（軒側）：y=140〜280 (下半分)
-        段2（棟側）：y=30〜170（重ね17cm分オーバーラップ）
+    <svg viewBox="0 0 880 430" width="100%" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+      <!--
+        千鳥配置：
+        1段目（軒側）：x=70から 80px有効幅で9枚 → 幅720px
+        2段目（棟側）：x=70+40=110 から半枚ずらし（半枚=40px）で並べる
+        シート実幅=94px、有効幅=80px、ずらし量=40px
+        1段目 y=210〜345（135px）、2段目 y=70〜205（135px）
+        縦重ね17cm分オーバーラップ → y=192〜210の18px
       -->
 
-      <!-- 段1 軒側 シート1〜9（薄め） -->
-      <!-- シート番号ラベル -->
-      <!-- 横重ね16px分ずつずらす、1枚幅=82px -->
+      <!-- 背景 -->
+      <rect x="70" y="70" width="720" height="275" fill="#f0ece2" stroke="#ccc" stroke-width="0.5"/>
 
-      <!-- Sheet row1（軒側・下段） 9枚 -->
-      <rect x="40"  y="152" width="97"  height="158" fill="#34495e" stroke="#1a1410" stroke-width="1.2" opacity="0.65" rx="1"/>
-      <rect x="122" y="152" width="97"  height="158" fill="#34495e" stroke="#1a1410" stroke-width="1.2" opacity="0.65" rx="1"/>
-      <rect x="204" y="152" width="97"  height="158" fill="#34495e" stroke="#1a1410" stroke-width="1.2" opacity="0.65" rx="1"/>
-      <rect x="286" y="152" width="97"  height="158" fill="#34495e" stroke="#1a1410" stroke-width="1.2" opacity="0.65" rx="1"/>
-      <rect x="368" y="152" width="97"  height="158" fill="#34495e" stroke="#1a1410" stroke-width="1.2" opacity="0.65" rx="1"/>
-      <rect x="450" y="152" width="97"  height="158" fill="#34495e" stroke="#1a1410" stroke-width="1.2" opacity="0.65" rx="1"/>
-      <rect x="532" y="152" width="97"  height="158" fill="#34495e" stroke="#1a1410" stroke-width="1.2" opacity="0.65" rx="1"/>
-      <rect x="614" y="152" width="97"  height="158" fill="#34495e" stroke="#1a1410" stroke-width="1.2" opacity="0.65" rx="1"/>
-      <rect x="683" y="152" width="97"  height="158" fill="#34495e" stroke="#1a1410" stroke-width="1.2" opacity="0.65" rx="1"/>
+      <!-- 寸法線：幅 6.85m（上） -->
+      <line x1="70"  y1="50" x2="790" y2="50" stroke="#1a1410" stroke-width="1.2"/>
+      <line x1="70"  y1="44" x2="70"  y2="56" stroke="#1a1410" stroke-width="1.2"/>
+      <line x1="790" y1="44" x2="790" y2="56" stroke="#1a1410" stroke-width="1.2"/>
+      <text x="430" y="42" text-anchor="middle" font-size="11" fill="#1a1410" font-weight="bold">6.85 m（棟方向）</text>
 
-      <!-- シート番号 下段 -->
-      <text x="88"  y="244" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">①</text>
-      <text x="170" y="244" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">②</text>
-      <text x="252" y="244" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">③</text>
-      <text x="334" y="244" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">④</text>
-      <text x="416" y="244" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑤</text>
-      <text x="498" y="244" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑥</text>
-      <text x="580" y="244" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑦</text>
-      <text x="662" y="244" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑧</text>
-      <text x="731" y="244" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑨</text>
+      <!-- 寸法線：流れ 3.48m（右） -->
+      <line x1="808" y1="70"  x2="808" y2="345" stroke="#1a1410" stroke-width="1.2"/>
+      <line x1="802" y1="70"  x2="814" y2="70"  stroke="#1a1410" stroke-width="1.2"/>
+      <line x1="802" y1="345" x2="814" y2="345" stroke="#1a1410" stroke-width="1.2"/>
+      <text x="844" y="210" text-anchor="middle" font-size="11" fill="#1a1410" font-weight="bold" transform="rotate(90,844,210)">3.48 m（流れ）</text>
 
-      <!-- Sheet row2（棟側・上段） 9枚 -->
-      <rect x="40"  y="30" width="97"  height="158" fill="#2c3e50" stroke="#1a1410" stroke-width="1.2" opacity="0.85" rx="1"/>
-      <rect x="122" y="30" width="97"  height="158" fill="#2c3e50" stroke="#1a1410" stroke-width="1.2" opacity="0.85" rx="1"/>
-      <rect x="204" y="30" width="97"  height="158" fill="#2c3e50" stroke="#1a1410" stroke-width="1.2" opacity="0.85" rx="1"/>
-      <rect x="286" y="30" width="97"  height="158" fill="#2c3e50" stroke="#1a1410" stroke-width="1.2" opacity="0.85" rx="1"/>
-      <rect x="368" y="30" width="97"  height="158" fill="#2c3e50" stroke="#1a1410" stroke-width="1.2" opacity="0.85" rx="1"/>
-      <rect x="450" y="30" width="97"  height="158" fill="#2c3e50" stroke="#1a1410" stroke-width="1.2" opacity="0.85" rx="1"/>
-      <rect x="532" y="30" width="97"  height="158" fill="#2c3e50" stroke="#1a1410" stroke-width="1.2" opacity="0.85" rx="1"/>
-      <rect x="614" y="30" width="97"  height="158" fill="#2c3e50" stroke="#1a1410" stroke-width="1.2" opacity="0.85" rx="1"/>
-      <rect x="683" y="30" width="97"  height="158" fill="#2c3e50" stroke="#1a1410" stroke-width="1.2" opacity="0.85" rx="1"/>
+      <!-- 垂木ライン（15本、縦方向に均等） -->
+      <line x1="70" y1="88"  x2="790" y2="88"  stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.3"/>
+      <line x1="70" y1="107" x2="790" y2="107" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.3"/>
+      <line x1="70" y1="126" x2="790" y2="126" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.3"/>
+      <line x1="70" y1="145" x2="790" y2="145" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.3"/>
+      <line x1="70" y1="164" x2="790" y2="164" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.3"/>
+      <line x1="70" y1="183" x2="790" y2="183" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.3"/>
+      <line x1="70" y1="202" x2="790" y2="202" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.3"/>
+      <line x1="70" y1="221" x2="790" y2="221" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.3"/>
+      <line x1="70" y1="240" x2="790" y2="240" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.3"/>
+      <line x1="70" y1="259" x2="790" y2="259" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.3"/>
+      <line x1="70" y1="278" x2="790" y2="278" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.3"/>
+      <line x1="70" y1="297" x2="790" y2="297" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.3"/>
+      <line x1="70" y1="316" x2="790" y2="316" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.3"/>
+      <line x1="70" y1="335" x2="790" y2="335" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.3"/>
 
-      <!-- シート番号 上段 -->
-      <text x="88"  y="80" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑩</text>
-      <text x="170" y="80" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑪</text>
-      <text x="252" y="80" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑫</text>
-      <text x="334" y="80" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑬</text>
-      <text x="416" y="80" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑭</text>
-      <text x="498" y="80" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑮</text>
-      <text x="580" y="80" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑯</text>
-      <text x="662" y="80" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑰</text>
-      <text x="731" y="80" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑱</text>
+      <!-- ===== 1段目（軒側）：①〜⑨ x=70から80px有効幅 ===== -->
+      <rect x="70"  y="208" width="94" height="137" fill="#34495e" stroke="#1a1410" stroke-width="1.2" opacity="0.65" rx="1"/>
+      <rect x="150" y="208" width="94" height="137" fill="#34495e" stroke="#1a1410" stroke-width="1.2" opacity="0.65" rx="1"/>
+      <rect x="230" y="208" width="94" height="137" fill="#34495e" stroke="#1a1410" stroke-width="1.2" opacity="0.65" rx="1"/>
+      <rect x="310" y="208" width="94" height="137" fill="#34495e" stroke="#1a1410" stroke-width="1.2" opacity="0.65" rx="1"/>
+      <rect x="390" y="208" width="94" height="137" fill="#34495e" stroke="#1a1410" stroke-width="1.2" opacity="0.65" rx="1"/>
+      <rect x="470" y="208" width="94" height="137" fill="#34495e" stroke="#1a1410" stroke-width="1.2" opacity="0.65" rx="1"/>
+      <rect x="550" y="208" width="94" height="137" fill="#34495e" stroke="#1a1410" stroke-width="1.2" opacity="0.65" rx="1"/>
+      <rect x="630" y="208" width="94" height="137" fill="#34495e" stroke="#1a1410" stroke-width="1.2" opacity="0.65" rx="1"/>
+      <rect x="696" y="208" width="94" height="137" fill="#34495e" stroke="#1a1410" stroke-width="1.2" opacity="0.65" rx="1"/>
 
-      <!-- 横重ね矢印（1枚目と2枚目の間） -->
-      <line x1="122" y1="52" x2="137" y2="52" stroke="#e67e22" stroke-width="1.5"/>
-      <polygon points="137,48 145,52 137,56" fill="#e67e22"/>
-      <text x="148" y="50" font-size="8" fill="#e67e22">横重ね</text>
-      <text x="148" y="60" font-size="8" fill="#e67e22">16cm (1山)</text>
+      <text x="117" y="282" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">①</text>
+      <text x="197" y="282" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">②</text>
+      <text x="277" y="282" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">③</text>
+      <text x="357" y="282" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">④</text>
+      <text x="437" y="282" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑤</text>
+      <text x="517" y="282" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑥</text>
+      <text x="597" y="282" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑦</text>
+      <text x="677" y="282" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑧</text>
+      <text x="743" y="282" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑨</text>
 
-      <!-- 縦重ね矢印 -->
-      <line x1="760" y1="152" x2="760" y2="169" stroke="#e67e22" stroke-width="1.5"/>
-      <polygon points="756,169 760,177 764,169" fill="#e67e22"/>
-      <text x="763" y="155" font-size="8" fill="#e67e22">縦重ね</text>
-      <text x="763" y="165" font-size="8" fill="#e67e22">17cm</text>
+      <!-- ===== 2段目（棟側）：⑩〜⑱ 半枚（40px）右にずらして千鳥 ===== -->
+      <!-- 半枚カット（左端の端数）：幅54px -->
+      <rect x="70"  y="70" width="54" height="155" fill="#2c3e50" stroke="#1a1410" stroke-width="1.2" opacity="0.82" rx="1"/>
+      <!-- ⑩〜⑰：フル幅 -->
+      <rect x="110" y="70" width="94" height="155" fill="#2c3e50" stroke="#1a1410" stroke-width="1.2" opacity="0.85" rx="1"/>
+      <rect x="190" y="70" width="94" height="155" fill="#2c3e50" stroke="#1a1410" stroke-width="1.2" opacity="0.85" rx="1"/>
+      <rect x="270" y="70" width="94" height="155" fill="#2c3e50" stroke="#1a1410" stroke-width="1.2" opacity="0.85" rx="1"/>
+      <rect x="350" y="70" width="94" height="155" fill="#2c3e50" stroke="#1a1410" stroke-width="1.2" opacity="0.85" rx="1"/>
+      <rect x="430" y="70" width="94" height="155" fill="#2c3e50" stroke="#1a1410" stroke-width="1.2" opacity="0.85" rx="1"/>
+      <rect x="510" y="70" width="94" height="155" fill="#2c3e50" stroke="#1a1410" stroke-width="1.2" opacity="0.85" rx="1"/>
+      <rect x="590" y="70" width="94" height="155" fill="#2c3e50" stroke="#1a1410" stroke-width="1.2" opacity="0.85" rx="1"/>
+      <rect x="670" y="70" width="94" height="155" fill="#2c3e50" stroke="#1a1410" stroke-width="1.2" opacity="0.85" rx="1"/>
+      <!-- 右端の端数（余り）：幅26px -->
+      <rect x="750" y="70" width="40" height="155" fill="#2c3e50" stroke="#1a1410" stroke-width="1.2" opacity="0.82" rx="1"/>
 
-      <!-- ===== 方向ラベル ===== -->
-      <!-- 棟 -->
-      <rect x="340" y="33" width="60" height="18" fill="#1a1410" rx="2"/>
-      <text x="370" y="46" text-anchor="middle" font-size="10" fill="#faf7f2" font-weight="bold">棟 ▲</text>
+      <!-- 千鳥ずれを示す縦点線 -->
+      <line x1="110" y1="70" x2="110" y2="225" stroke="#e67e22" stroke-width="1" stroke-dasharray="3,3" opacity="0.7"/>
+      <line x1="670" y1="70" x2="670" y2="225" stroke="#e67e22" stroke-width="1" stroke-dasharray="3,3" opacity="0.7"/>
 
-      <!-- 軒 -->
-      <rect x="340" y="290" width="60" height="18" fill="#7f8c8d" rx="2"/>
-      <text x="370" y="303" text-anchor="middle" font-size="10" fill="#faf7f2">軒 ▼</text>
+      <!-- 番号：左端カット -->
+      <text x="89"  y="148" text-anchor="middle" font-size="9"  fill="#faf7f2" opacity="0.8">切</text>
+      <!-- 番号：フル枚 -->
+      <text x="157" y="148" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑩</text>
+      <text x="237" y="148" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑪</text>
+      <text x="317" y="148" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑫</text>
+      <text x="397" y="148" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑬</text>
+      <text x="477" y="148" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑭</text>
+      <text x="557" y="148" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑮</text>
+      <text x="637" y="148" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑯</text>
+      <text x="717" y="148" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑰</text>
+      <!-- 番号：右端カット -->
+      <text x="766" y="148" text-anchor="middle" font-size="9"  fill="#faf7f2" opacity="0.8">切</text>
 
-      <!-- スタート矢印（①から） -->
-      <text x="88" y="320" text-anchor="middle" font-size="9" fill="#c0392b" font-weight="bold">START</text>
-      <line x1="88" y1="314" x2="88" y2="310" stroke="#c0392b" stroke-width="1.5"/>
-      <polygon points="84,310 88,302 92,310" fill="#c0392b"/>
+      <!-- 千鳥オフセット注記 -->
+      <line x1="70" y1="232" x2="110" y2="232" stroke="#e67e22" stroke-width="1.5"/>
+      <line x1="70" y1="228" x2="70"  y2="236" stroke="#e67e22" stroke-width="1.2"/>
+      <line x1="110" y1="228" x2="110" y2="236" stroke="#e67e22" stroke-width="1.2"/>
+      <text x="90" y="248" text-anchor="middle" font-size="8" fill="#e67e22">半枚ずらし</text>
+      <text x="90" y="258" text-anchor="middle" font-size="8" fill="#e67e22">（約47cm）</text>
 
-      <!-- 葺き方向矢印（左→右） -->
-      <line x1="200" y1="320" x2="650" y2="320" stroke="#1a1410" stroke-width="1.5"/>
-      <polygon points="650,316 660,320 650,324" fill="#1a1410"/>
-      <text x="425" y="333" text-anchor="middle" font-size="9" fill="#1a1410">① → ⑨ 軒側を先に、左から右へ</text>
+      <!-- 縦重ね注記 -->
+      <line x1="762" y1="208" x2="762" y2="225" stroke="#e67e22" stroke-width="1.5"/>
+      <polygon points="758,225 762,233 766,225" fill="#e67e22"/>
+      <text x="764" y="212" font-size="8" fill="#e67e22">縦重ね 17cm</text>
 
-      <!-- 段順矢印（下→上） -->
-      <line x1="10" y1="280" x2="10" y2="60" stroke="#1a1410" stroke-width="1.5"/>
-      <polygon points="6,60 10,50 14,60" fill="#1a1410"/>
-      <text x="5" y="175" text-anchor="middle" font-size="9" fill="#1a1410" transform="rotate(-90,5,175)">軒側から棟へ</text>
+      <!-- 横重ね注記 -->
+      <line x1="150" y1="90" x2="165" y2="90" stroke="#e67e22" stroke-width="1.5"/>
+      <polygon points="165,86 173,90 165,94" fill="#e67e22"/>
+      <text x="175" y="88" font-size="8" fill="#e67e22">横重ね 16cm（1山）</text>
+
+      <!-- 1枚の縦寸法 -->
+      <line x1="796" y1="70"  x2="796" y2="225" stroke="#2c3e50" stroke-width="0.8" stroke-dasharray="3,2"/>
+      <line x1="790" y1="70"  x2="802" y2="70"  stroke="#2c3e50" stroke-width="0.8"/>
+      <line x1="790" y1="225" x2="802" y2="225" stroke="#2c3e50" stroke-width="0.8"/>
+      <text x="856" y="150" text-anchor="middle" font-size="9" fill="#2c3e50" transform="rotate(90,856,150)">1枚 200cm</text>
+
+      <!-- 棟ラベル -->
+      <rect x="398" y="73" width="64" height="16" fill="#1a1410" rx="2"/>
+      <text x="430" y="85" text-anchor="middle" font-size="9" fill="#faf7f2" font-weight="bold">棟 ▲</text>
+
+      <!-- 軒ラベル -->
+      <rect x="398" y="329" width="64" height="16" fill="#7f8c8d" rx="2"/>
+      <text x="430" y="341" text-anchor="middle" font-size="9" fill="#faf7f2">軒 ▼</text>
+
+      <!-- STARTマーカー -->
+      <text x="117" y="378" text-anchor="middle" font-size="9" fill="#c0392b" font-weight="bold">START</text>
+      <line x1="117" y1="372" x2="117" y2="366" stroke="#c0392b" stroke-width="1.5"/>
+      <polygon points="113,366 117,358 121,366" fill="#c0392b"/>
+
+      <!-- 葺き方向 -->
+      <line x1="230" y1="374" x2="660" y2="374" stroke="#1a1410" stroke-width="1.5"/>
+      <polygon points="660,370 670,374 660,378" fill="#1a1410"/>
+      <text x="440" y="390" text-anchor="middle" font-size="9" fill="#1a1410">① → ⑨ 軒側を先に左→右 / 2段目は半枚ずらして千鳥に</text>
+
+      <!-- 段順矢印 -->
+      <line x1="30" y1="330" x2="30" y2="85" stroke="#1a1410" stroke-width="1.5"/>
+      <polygon points="26,85 30,75 34,85" fill="#1a1410"/>
+      <text x="24" y="210" text-anchor="middle" font-size="9" fill="#1a1410" transform="rotate(-90,24,210)">軒側から棟へ</text>
 
     </svg>
 
     <!-- 凡例 -->
-    <div style="display:flex; gap:32px; margin-top:16px; flex-wrap:wrap;">
-      <div style="display:flex; align-items:center; gap:8px; font-size:12px;">
-        <rect width="20" height="12" fill="#34495e" opacity="0.65" style="display:inline-block; width:20px; height:12px; border-radius:2px;"></rect>
+    <div style="display:flex; gap:24px; margin-top:14px; flex-wrap:wrap; align-items:center;">
+      <div style="display:flex; align-items:center; gap:7px; font-size:11px;">
+        <span style="display:inline-block; width:18px; height:11px; background:#34495e; border-radius:2px; opacity:0.65;"></span>
         <span>1段目（軒側）①〜⑨</span>
       </div>
-      <div style="display:flex; align-items:center; gap:8px; font-size:12px;">
-        <span style="display:inline-block; width:20px; height:12px; background:#2c3e50; border-radius:2px; opacity:0.9;"></span>
-        <span>2段目（棟側）⑩〜⑱　←上に重なる</span>
+      <div style="display:flex; align-items:center; gap:7px; font-size:11px;">
+        <span style="display:inline-block; width:18px; height:11px; background:#2c3e50; border-radius:2px;"></span>
+        <span>2段目（棟側）⑩〜⑰ ＋両端カット材 ← 半枚ずらして千鳥</span>
       </div>
-      <div style="display:flex; align-items:center; gap:8px; font-size:12px;">
-        <span style="display:inline-block; width:20px; height:3px; background:#c0392b; margin-bottom:4px;"></span>
-        <span style="font-family:'DM Mono',monospace; font-size:10px; color:#c0392b;">- - -</span>
-        <span>垂木位置（23cmピッチ）</span>
+      <div style="display:flex; align-items:center; gap:7px; font-size:11px;">
+        <span style="display:inline-block; width:18px; height:2px; background:#c0392b; opacity:0.5; margin-bottom:2px;"></span>
+        <span>垂木位置（〜23cmピッチ）</span>
       </div>
-      <div style="display:flex; align-items:center; gap:8px; font-size:12px;">
+      <div style="display:flex; align-items:center; gap:7px; font-size:11px;">
         <span style="display:inline-block; width:8px; height:8px; background:#e67e22; border-radius:50%;"></span>
-        <span>重ね寸法</span>
+        <span>重ね・千鳥ずれ寸法</span>
       </div>
     </div>
 
-    <div style="margin-top:16px; padding:12px 16px; background:var(--paper); border-left:3px solid var(--rust); font-size:12px; line-height:1.8;">
+    <div style="margin-top:14px; padding:11px 14px; background:var(--paper); border-left:3px solid var(--rust); font-size:12px; line-height:1.8;">
       <span style="font-family:'DM Mono',monospace; color:var(--rust); font-size:10px; margin-right:8px;">NOTE</span>
       これは片面（1面）の葺き順。反対面も同じ手順で繰り返す。最後に棟板（リッジ）を両面の上端にまたがせて固定。
     </div>
@@ -568,7 +462,7 @@
 
   <div class="footer">
     <div class="footer-note">Studio Roof / Onduline Classic / DIY Plan</div>
-    <div class="footer-tag">甲州市 — 2025</div>
+    <div class="footer-tag">甲州市 — 2026</div>
   </div>
 
 </div>

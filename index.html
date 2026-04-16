@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>スタジオ屋根リノベ計画</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   
@@ -20,7 +20,7 @@
   body {
     background: var(--paper);
     color: var(--ink);
-    font-family: 'Noto Serif JP', serif;
+    font-family: 'Noto Sans JP', 'DM Sans', sans-serif;
     min-height: 100vh;
     padding: 40px 20px;
   }
@@ -48,7 +48,7 @@
     letter-spacing: 0.3em;
     color: var(--steel);
     margin-bottom: 8px;
-    font-family: 'Space Mono', monospace;
+    font-family: 'DM Mono', monospace;
     text-transform: uppercase;
   }
 
@@ -64,7 +64,7 @@
 
   .header-right {
     text-align: right;
-    font-family: 'Space Mono', monospace;
+    font-family: 'DM Mono', monospace;
     font-size: 11px;
     color: var(--steel);
     line-height: 1.8;
@@ -86,7 +86,7 @@
   .cell:nth-last-child(-n+2) { border-bottom: none; }
 
   .cell-label {
-    font-family: 'Space Mono', monospace;
+    font-family: 'DM Mono', monospace;
     font-size: 9px;
     letter-spacing: 0.3em;
     text-transform: uppercase;
@@ -102,7 +102,7 @@
   }
 
   svg text {
-    font-family: 'Space Mono', monospace;
+    font-family: 'DM Mono', monospace;
   }
 
   /* 材料リスト */
@@ -123,10 +123,10 @@
     font-size: 10px;
     color: var(--steel);
     margin-top: 2px;
-    font-family: 'Space Mono', monospace;
+    font-family: 'DM Mono', monospace;
   }
   .mat-qty {
-    font-family: 'Space Mono', monospace;
+    font-family: 'DM Mono', monospace;
     font-size: 20px;
     font-weight: 700;
     color: var(--rust);
@@ -157,7 +157,7 @@
     margin-bottom: 4px;
   }
   .dim-val {
-    font-family: 'Space Mono', monospace;
+    font-family: 'DM Mono', monospace;
     font-size: 20px;
     font-weight: 700;
   }
@@ -182,7 +182,7 @@
   }
   .method-list li:last-child { border-bottom: none; }
   .step-num {
-    font-family: 'Space Mono', monospace;
+    font-family: 'DM Mono', monospace;
     font-size: 11px;
     color: var(--rust);
     font-weight: 700;
@@ -201,13 +201,13 @@
     color: var(--light);
   }
   .footer-note {
-    font-family: 'Space Mono', monospace;
+    font-family: 'DM Mono', monospace;
     font-size: 10px;
     letter-spacing: 0.1em;
     opacity: 0.7;
   }
   .footer-tag {
-    font-family: 'Space Mono', monospace;
+    font-family: 'DM Mono', monospace;
     font-size: 10px;
     color: var(--accent);
   }
@@ -417,6 +417,154 @@
     </div>
 
   </div><!-- /main -->
+
+  <!-- 貼り順図解 全幅 -->
+  <div style="border-top: 3px solid var(--ink); padding: 28px 32px 32px;">
+    <div class="cell-label" style="margin-bottom:20px;">Laying Order — 葺き順図解</div>
+
+    <svg viewBox="0 0 820 340" width="100%" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+
+      <!-- ===== 屋根の輪郭（平面・俯瞰） ===== -->
+      <!-- 背景グリッド（垂木ライン） -->
+      <rect x="40" y="30" width="740" height="280" fill="#f0ece2" stroke="#ccc" stroke-width="0.5"/>
+
+      <!-- 垂木ライン（横方向・15本） -->
+      <line x1="40"  y1="48"  x2="780" y2="48"  stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+      <line x1="40"  y1="67"  x2="780" y2="67"  stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+      <line x1="40"  y1="86"  x2="780" y2="86"  stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+      <line x1="40"  y1="105" x2="780" y2="105" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+      <line x1="40"  y1="124" x2="780" y2="124" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+      <line x1="40"  y1="143" x2="780" y2="143" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+      <line x1="40"  y1="162" x2="780" y2="162" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+      <line x1="40"  y1="181" x2="780" y2="181" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+      <line x1="40"  y1="200" x2="780" y2="200" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+      <line x1="40"  y1="219" x2="780" y2="219" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+      <line x1="40"  y1="238" x2="780" y2="238" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+      <line x1="40"  y1="257" x2="780" y2="257" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+      <line x1="40"  y1="276" x2="780" y2="276" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+      <line x1="40"  y1="295" x2="780" y2="295" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+
+      <!-- ===== オンデュリンシート（俯瞰）===== -->
+      <!-- 
+        片面：幅6.85m → 9枚横、2段縦
+        図面上：幅740px、高さ280px
+        有効幅：740/9 ≒ 82px、実幅（重ね含）≒ 98px
+        段1（軒側）：y=140〜280 (下半分)
+        段2（棟側）：y=30〜170（重ね17cm分オーバーラップ）
+      -->
+
+      <!-- 段1 軒側 シート1〜9（薄め） -->
+      <!-- シート番号ラベル -->
+      <!-- 横重ね16px分ずつずらす、1枚幅=82px -->
+
+      <!-- Sheet row1（軒側・下段） 9枚 -->
+      <rect x="40"  y="152" width="97"  height="158" fill="#34495e" stroke="#1a1410" stroke-width="1.2" opacity="0.65" rx="1"/>
+      <rect x="122" y="152" width="97"  height="158" fill="#34495e" stroke="#1a1410" stroke-width="1.2" opacity="0.65" rx="1"/>
+      <rect x="204" y="152" width="97"  height="158" fill="#34495e" stroke="#1a1410" stroke-width="1.2" opacity="0.65" rx="1"/>
+      <rect x="286" y="152" width="97"  height="158" fill="#34495e" stroke="#1a1410" stroke-width="1.2" opacity="0.65" rx="1"/>
+      <rect x="368" y="152" width="97"  height="158" fill="#34495e" stroke="#1a1410" stroke-width="1.2" opacity="0.65" rx="1"/>
+      <rect x="450" y="152" width="97"  height="158" fill="#34495e" stroke="#1a1410" stroke-width="1.2" opacity="0.65" rx="1"/>
+      <rect x="532" y="152" width="97"  height="158" fill="#34495e" stroke="#1a1410" stroke-width="1.2" opacity="0.65" rx="1"/>
+      <rect x="614" y="152" width="97"  height="158" fill="#34495e" stroke="#1a1410" stroke-width="1.2" opacity="0.65" rx="1"/>
+      <rect x="683" y="152" width="97"  height="158" fill="#34495e" stroke="#1a1410" stroke-width="1.2" opacity="0.65" rx="1"/>
+
+      <!-- シート番号 下段 -->
+      <text x="88"  y="244" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">①</text>
+      <text x="170" y="244" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">②</text>
+      <text x="252" y="244" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">③</text>
+      <text x="334" y="244" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">④</text>
+      <text x="416" y="244" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑤</text>
+      <text x="498" y="244" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑥</text>
+      <text x="580" y="244" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑦</text>
+      <text x="662" y="244" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑧</text>
+      <text x="731" y="244" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑨</text>
+
+      <!-- Sheet row2（棟側・上段） 9枚 -->
+      <rect x="40"  y="30" width="97"  height="158" fill="#2c3e50" stroke="#1a1410" stroke-width="1.2" opacity="0.85" rx="1"/>
+      <rect x="122" y="30" width="97"  height="158" fill="#2c3e50" stroke="#1a1410" stroke-width="1.2" opacity="0.85" rx="1"/>
+      <rect x="204" y="30" width="97"  height="158" fill="#2c3e50" stroke="#1a1410" stroke-width="1.2" opacity="0.85" rx="1"/>
+      <rect x="286" y="30" width="97"  height="158" fill="#2c3e50" stroke="#1a1410" stroke-width="1.2" opacity="0.85" rx="1"/>
+      <rect x="368" y="30" width="97"  height="158" fill="#2c3e50" stroke="#1a1410" stroke-width="1.2" opacity="0.85" rx="1"/>
+      <rect x="450" y="30" width="97"  height="158" fill="#2c3e50" stroke="#1a1410" stroke-width="1.2" opacity="0.85" rx="1"/>
+      <rect x="532" y="30" width="97"  height="158" fill="#2c3e50" stroke="#1a1410" stroke-width="1.2" opacity="0.85" rx="1"/>
+      <rect x="614" y="30" width="97"  height="158" fill="#2c3e50" stroke="#1a1410" stroke-width="1.2" opacity="0.85" rx="1"/>
+      <rect x="683" y="30" width="97"  height="158" fill="#2c3e50" stroke="#1a1410" stroke-width="1.2" opacity="0.85" rx="1"/>
+
+      <!-- シート番号 上段 -->
+      <text x="88"  y="80" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑩</text>
+      <text x="170" y="80" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑪</text>
+      <text x="252" y="80" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑫</text>
+      <text x="334" y="80" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑬</text>
+      <text x="416" y="80" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑭</text>
+      <text x="498" y="80" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑮</text>
+      <text x="580" y="80" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑯</text>
+      <text x="662" y="80" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑰</text>
+      <text x="731" y="80" text-anchor="middle" font-size="11" fill="#faf7f2" font-weight="bold">⑱</text>
+
+      <!-- 横重ね矢印（1枚目と2枚目の間） -->
+      <line x1="122" y1="52" x2="137" y2="52" stroke="#e67e22" stroke-width="1.5"/>
+      <polygon points="137,48 145,52 137,56" fill="#e67e22"/>
+      <text x="148" y="50" font-size="8" fill="#e67e22">横重ね</text>
+      <text x="148" y="60" font-size="8" fill="#e67e22">16cm (1山)</text>
+
+      <!-- 縦重ね矢印 -->
+      <line x1="760" y1="152" x2="760" y2="169" stroke="#e67e22" stroke-width="1.5"/>
+      <polygon points="756,169 760,177 764,169" fill="#e67e22"/>
+      <text x="763" y="155" font-size="8" fill="#e67e22">縦重ね</text>
+      <text x="763" y="165" font-size="8" fill="#e67e22">17cm</text>
+
+      <!-- ===== 方向ラベル ===== -->
+      <!-- 棟 -->
+      <rect x="340" y="33" width="60" height="18" fill="#1a1410" rx="2"/>
+      <text x="370" y="46" text-anchor="middle" font-size="10" fill="#faf7f2" font-weight="bold">棟 ▲</text>
+
+      <!-- 軒 -->
+      <rect x="340" y="290" width="60" height="18" fill="#7f8c8d" rx="2"/>
+      <text x="370" y="303" text-anchor="middle" font-size="10" fill="#faf7f2">軒 ▼</text>
+
+      <!-- スタート矢印（①から） -->
+      <text x="88" y="320" text-anchor="middle" font-size="9" fill="#c0392b" font-weight="bold">START</text>
+      <line x1="88" y1="314" x2="88" y2="310" stroke="#c0392b" stroke-width="1.5"/>
+      <polygon points="84,310 88,302 92,310" fill="#c0392b"/>
+
+      <!-- 葺き方向矢印（左→右） -->
+      <line x1="200" y1="320" x2="650" y2="320" stroke="#1a1410" stroke-width="1.5"/>
+      <polygon points="650,316 660,320 650,324" fill="#1a1410"/>
+      <text x="425" y="333" text-anchor="middle" font-size="9" fill="#1a1410">① → ⑨ 軒側を先に、左から右へ</text>
+
+      <!-- 段順矢印（下→上） -->
+      <line x1="10" y1="280" x2="10" y2="60" stroke="#1a1410" stroke-width="1.5"/>
+      <polygon points="6,60 10,50 14,60" fill="#1a1410"/>
+      <text x="5" y="175" text-anchor="middle" font-size="9" fill="#1a1410" transform="rotate(-90,5,175)">軒側から棟へ</text>
+
+    </svg>
+
+    <!-- 凡例 -->
+    <div style="display:flex; gap:32px; margin-top:16px; flex-wrap:wrap;">
+      <div style="display:flex; align-items:center; gap:8px; font-size:12px;">
+        <rect width="20" height="12" fill="#34495e" opacity="0.65" style="display:inline-block; width:20px; height:12px; border-radius:2px;"></rect>
+        <span>1段目（軒側）①〜⑨</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:8px; font-size:12px;">
+        <span style="display:inline-block; width:20px; height:12px; background:#2c3e50; border-radius:2px; opacity:0.9;"></span>
+        <span>2段目（棟側）⑩〜⑱　←上に重なる</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:8px; font-size:12px;">
+        <span style="display:inline-block; width:20px; height:3px; background:#c0392b; margin-bottom:4px;"></span>
+        <span style="font-family:'DM Mono',monospace; font-size:10px; color:#c0392b;">- - -</span>
+        <span>垂木位置（23cmピッチ）</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:8px; font-size:12px;">
+        <span style="display:inline-block; width:8px; height:8px; background:#e67e22; border-radius:50%;"></span>
+        <span>重ね寸法</span>
+      </div>
+    </div>
+
+    <div style="margin-top:16px; padding:12px 16px; background:var(--paper); border-left:3px solid var(--rust); font-size:12px; line-height:1.8;">
+      <span style="font-family:'DM Mono',monospace; color:var(--rust); font-size:10px; margin-right:8px;">NOTE</span>
+      これは片面（1面）の葺き順。反対面も同じ手順で繰り返す。最後に棟板（リッジ）を両面の上端にまたがせて固定。
+    </div>
+  </div>
 
   <div class="footer">
     <div class="footer-note">Studio Roof / Onduline Classic / DIY Plan</div>

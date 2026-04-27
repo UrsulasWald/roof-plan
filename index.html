@@ -120,7 +120,7 @@
       <h1>Studio Roof Renovation Plan</h1>
       <h2>スタジオ<br>屋根リノベ<span>計画書</span></h2>
     </div>
-    <div class="header-right">Onduline Classic<br>重ね葺き工法<br>約48㎡（両面）</div>
+    <div class="header-right">Onduline Classic<br>C案・通気層工法<br>約48㎡（両面）</div>
   </div>
 
   <div class="main">
@@ -128,43 +128,102 @@
     <!-- 左列1：断面図 -->
     <div class="cell">
       <div class="cell-label">Cross Section — 断面構成</div>
-      <svg viewBox="0 0 340 250" width="100%" xmlns="http://www.w3.org/2000/svg">
-        <text x="30"  y="16" font-size="8" fill="#7f8c8d">◀ 軒</text>
-        <text x="280" y="16" font-size="8" fill="#7f8c8d">棟 ▶</text>
-        <line x1="25" y1="20" x2="315" y2="20" stroke="#ddd" stroke-width="0.5" stroke-dasharray="3,3"/>
-        <rect x="25" y="170" width="295" height="9" fill="#8B7355" rx="1"/>
-        <rect x="80"  y="155" width="6" height="15" fill="#5a4a2a" rx="1"/>
-        <rect x="160" y="155" width="6" height="15" fill="#5a4a2a" rx="1"/>
-        <rect x="240" y="155" width="6" height="15" fill="#5a4a2a" rx="1"/>
+      <svg viewBox="0 0 360 310" width="100%" xmlns="http://www.w3.org/2000/svg">
+        <!--
+          C案の積層構成（流れ方向に切った断面・修正版）
+          修正点：
+          1. 新垂木Bは縦長断面（既存垂木と同じ向き＝流れ方向に走る）→ 断面で見ると四角
+          2. ハゼを幅広く（35mm相当）
+          3. 既存鋼板と既存野地板はくっつける
+        -->
+        <text x="30"  y="14" font-size="8" fill="#7f8c8d">◀ 軒</text>
+        <text x="280" y="14" font-size="8" fill="#7f8c8d">棟 ▶</text>
+        <line x1="25" y1="18" x2="315" y2="18" stroke="#ddd" stroke-width="0.5" stroke-dasharray="3,3"/>
 
-        <text x="170" y="192" text-anchor="middle" font-size="8" fill="#7f8c8d">既存立平葺き（鋼板）</text>
-        <rect x="25" y="139" width="295" height="16" fill="#c0392b" rx="2" opacity="0.85"/>
-        <text x="170" y="150" text-anchor="middle" font-size="8" fill="#faf7f2" font-weight="bold">新垂木（30×40mm）横方向に走る</text>
-        <line x1="326" y1="139" x2="326" y2="155" stroke="#c0392b" stroke-width="0.8"/>
-        <line x1="322" y1="139" x2="330" y2="139" stroke="#c0392b" stroke-width="0.8"/>
-        <line x1="322" y1="155" x2="330" y2="155" stroke="#c0392b" stroke-width="0.8"/>
-        <text x="332" y="150" font-size="7" fill="#c0392b">40mm</text>
-        <!-- 垂木ピッチ：テキストのみ -->
-        <text x="28" y="225" font-size="7.5" fill="#c0392b">▲ 垂木ピッチ 43cm（流れ方向）</text>
+        <!-- オンデュリン（波板） -->
+        <path d="M25,32 Q42,22 59,32 Q76,42 93,32 Q110,22 127,32 Q144,42 161,32 Q178,22 195,32 Q212,42 229,32 Q246,22 263,32 Q280,42 297,32 L320,32 L320,48 Q303,38 286,48 Q269,58 252,48 Q235,38 218,48 Q201,58 184,48 Q167,38 150,48 Q133,58 116,48 Q99,38 82,48 Q65,58 48,48 Q31,38 25,48 Z" fill="#2c3e50" opacity="0.85"/>
+        <text x="170" y="24" text-anchor="middle" font-size="8" fill="#2c3e50">Onduline Classic</text>
 
-        <!-- ハゼピッチ寸法線：鋼板の下に配置 -->
-        <line x1="83"  y1="188" x2="163" y2="188" stroke="#5a4a2a" stroke-width="0.8"/>
-        <line x1="83"  y1="184" x2="83"  y2="192" stroke="#5a4a2a" stroke-width="0.8"/>
-        <line x1="163" y1="184" x2="163" y2="192" stroke="#5a4a2a" stroke-width="0.8"/>
-        <text x="123" y="202" text-anchor="middle" font-size="7.5" fill="#5a4a2a">ハゼ 45.5cm</text>
-        <path d="M25,110 Q42,100 59,110 Q76,120 93,110 Q110,100 127,110 Q144,120 161,110 Q178,100 195,110 Q212,120 229,110 Q246,100 263,110 Q280,120 297,110 L320,110 L320,126 Q303,116 286,126 Q269,136 252,126 Q235,116 218,126 Q201,136 184,126 Q167,116 150,126 Q133,136 116,126 Q99,116 82,126 Q65,136 48,126 Q31,116 25,126 Z" fill="#2c3e50" opacity="0.85"/>
-        <text x="170" y="97" text-anchor="middle" font-size="8.5" fill="#2c3e50">Onduline Classic</text>
-        <line x1="163" y1="126" x2="163" y2="179" stroke="#e67e22" stroke-width="1.8"/>
-        <circle cx="163" cy="139" r="3" fill="#e67e22"/>
-        <circle cx="163" cy="155" r="2.5" fill="#e67e22" opacity="0.7"/>
-        <circle cx="163" cy="179" r="2.5" fill="#e67e22"/>
-        <line x1="166" y1="152" x2="195" y2="152" stroke="#e67e22" stroke-width="0.8" stroke-dasharray="2,2"/>
-        <text x="197" y="150" font-size="7.5" fill="#e67e22">テクスビス 60mm</text>
-        <text x="197" y="159" font-size="7"   fill="#7f8c8d">＋コーキング</text>
-        <line x1="14" y1="110" x2="14" y2="179" stroke="#1a1410" stroke-width="1"/>
-        <line x1="10" y1="110" x2="18" y2="110" stroke="#1a1410" stroke-width="1"/>
-        <line x1="10" y1="179" x2="18" y2="179" stroke="#1a1410" stroke-width="1"/>
-        <text x="8" y="148" text-anchor="middle" font-size="7.5" fill="#1a1410" transform="rotate(-90,8,148)">積層構成</text>
+        <!-- 新野地板（12mm） -->
+        <rect x="25" y="50" width="295" height="10" fill="#7fb3a0" rx="1" opacity="0.9"/>
+        <text x="170" y="59" text-anchor="middle" font-size="7" fill="#fff" font-weight="bold">新野地板 12mm</text>
+        <!-- 寸法線 -->
+        <line x1="328" y1="50" x2="328" y2="60" stroke="#7fb3a0" stroke-width="0.8"/>
+        <line x1="324" y1="50" x2="332" y2="50" stroke="#7fb3a0" stroke-width="0.8"/>
+        <line x1="324" y1="60" x2="332" y2="60" stroke="#7fb3a0" stroke-width="0.8"/>
+        <text x="334" y="58" font-size="7" fill="#7fb3a0">12</text>
+
+        <!-- 新垂木B：縦長断面（流れ方向に走る→断面は縦長の四角）3本 -->
+        <!-- ハゼ脇に配置：ハゼx=80,160,240 → 垂木BはそれぞれのLR脇 -->
+        <!-- 垂木B断面：幅30px（30mm）× 高さ40px（40mm） -->
+        <rect x="48"  y="60" width="22" height="40" fill="#c0392b" rx="1" opacity="0.9"/>
+        <rect x="128" y="60" width="22" height="40" fill="#c0392b" rx="1" opacity="0.9"/>
+        <rect x="208" y="60" width="22" height="40" fill="#c0392b" rx="1" opacity="0.9"/>
+        <rect x="288" y="60" width="22" height="40" fill="#c0392b" rx="1" opacity="0.9"/>
+
+        <!-- 垂木Bラベル（引き出し） -->
+        <line x1="59" y1="60" x2="59" y2="48" stroke="#c0392b" stroke-width="0.8" stroke-dasharray="2,2"/>
+        <!-- 寸法線（高さ40mm） -->
+        <line x1="328" y1="60" x2="328" y2="100" stroke="#c0392b" stroke-width="0.8"/>
+        <line x1="324" y1="60" x2="332" y2="60" stroke="#c0392b" stroke-width="0.8"/>
+        <line x1="324" y1="100" x2="332" y2="100" stroke="#c0392b" stroke-width="0.8"/>
+        <text x="334" y="83" font-size="7" fill="#c0392b">40</text>
+        <text x="59" y="84" text-anchor="middle" font-size="7" fill="#faf7f2" font-weight="bold" transform="rotate(-90,59,84)">垂木B</text>
+
+        <!-- 空気層（垂木Bの間） -->
+        <text x="107" y="88" text-anchor="middle" font-size="7" fill="#aaa">空気層</text>
+        <text x="107" y="97" text-anchor="middle" font-size="7" fill="#aaa">40mm</text>
+
+        <!-- 既存鋼板（立平葺き）垂木Bの下端にくっつく -->
+        <rect x="25" y="100" width="295" height="5" fill="#8B7355" rx="1"/>
+
+        <!-- ハゼ（太く・幅20px≒35mm相当）既存鋼板から上に立ち上がる -->
+        <!-- ハゼはx=80,160,240付近、高さ35px（35mm） -->
+        <rect x="72"  y="65" width="20" height="35" fill="#5a4a2a" rx="1"/>
+        <rect x="152" y="65" width="20" height="35" fill="#5a4a2a" rx="1"/>
+        <rect x="232" y="65" width="20" height="35" fill="#5a4a2a" rx="1"/>
+
+        <!-- ハゼラベル -->
+        <line x1="82" y1="65" x2="82" y2="55" stroke="#5a4a2a" stroke-width="0.8" stroke-dasharray="2,2"/>
+        <text x="82" y="52" text-anchor="middle" font-size="7" fill="#5a4a2a">ハゼ</text>
+
+        <!-- 既存鋼板ラベル -->
+        <text x="170" y="114" text-anchor="middle" font-size="7.5" fill="#7f8c8d">既存鋼板（立平葺き）</text>
+
+        <!-- ハゼピッチ寸法線（鋼板の下） -->
+        <line x1="82"  y1="122" x2="162" y2="122" stroke="#5a4a2a" stroke-width="0.8"/>
+        <line x1="82"  y1="119" x2="82"  y2="125" stroke="#5a4a2a" stroke-width="0.8"/>
+        <line x1="162" y1="119" x2="162" y2="125" stroke="#5a4a2a" stroke-width="0.8"/>
+        <text x="122" y="135" text-anchor="middle" font-size="7.5" fill="#5a4a2a">ハゼ 45.5cm</text>
+
+        <!-- 既存野地板（12mm）既存鋼板にくっつく -->
+        <rect x="25" y="105" width="295" height="10" fill="#b8906a" rx="1" opacity="0.8"/>
+        <text x="170" y="114" text-anchor="middle" font-size="7" fill="#fff">既存野地板 12mm</text>
+
+        <!-- 既存垂木（縦長断面・流れ方向に走る）3本 -->
+        <rect x="60"  y="115" width="22" height="35" fill="#8B7355" rx="1" opacity="0.7"/>
+        <rect x="155" y="115" width="22" height="35" fill="#8B7355" rx="1" opacity="0.7"/>
+        <rect x="250" y="115" width="22" height="35" fill="#8B7355" rx="1" opacity="0.7"/>
+        <text x="71"  y="136" text-anchor="middle" font-size="7" fill="#faf7f2" transform="rotate(-90,71,136)">既存垂木</text>
+        <text x="170" y="162" text-anchor="middle" font-size="7.5" fill="#7f8c8d">既存垂木</text>
+
+        <!-- テクスビス（新垂木B→既存鋼板→既存野地板まで） -->
+        <line x1="59" y1="60" x2="59" y2="115" stroke="#e67e22" stroke-width="1.8"/>
+        <circle cx="59" cy="64"  r="3"   fill="#e67e22"/>
+        <circle cx="59" cy="102" r="2.5" fill="#e67e22" opacity="0.7"/>
+        <circle cx="59" cy="115" r="2.5" fill="#e67e22"/>
+        <line x1="63" y1="95" x2="92" y2="95" stroke="#e67e22" stroke-width="0.8" stroke-dasharray="2,2"/>
+        <text x="94"  y="93"  font-size="7.5" fill="#e67e22">テクスビス 80mm</text>
+        <text x="94"  y="102" font-size="7"   fill="#7f8c8d">＋コーキング</text>
+
+        <!-- 垂木Bピッチ注記 -->
+        <text x="28" y="210" font-size="7.5" fill="#c0392b">▲ 垂木Bピッチ 45.5cm（ハゼに沿う）</text>
+
+        <!-- 積層寸法線（左） -->
+        <line x1="14" y1="32" x2="14" y2="115" stroke="#1a1410" stroke-width="1"/>
+        <line x1="10" y1="32"  x2="18" y2="32"  stroke="#1a1410" stroke-width="1"/>
+        <line x1="10" y1="115" x2="18" y2="115" stroke="#1a1410" stroke-width="1"/>
+        <text x="8" y="76" text-anchor="middle" font-size="7.5" fill="#1a1410" transform="rotate(-90,8,76)">積層構成</text>
       </svg>
     </div>
 
@@ -175,8 +234,8 @@
         <div class="dim-box"><div class="dim-label">棟方向（幅）</div><div class="dim-val">6.85<span class="dim-unit">m</span></div></div>
         <div class="dim-box"><div class="dim-label">流れ長さ（片面）</div><div class="dim-val">3.48<span class="dim-unit">m</span></div></div>
         <div class="dim-box"><div class="dim-label">ハゼピッチ</div><div class="dim-val">45.5<span class="dim-unit">cm</span></div></div>
-        <div class="dim-box"><div class="dim-label">垂木ピッチ</div><div class="dim-val">43<span class="dim-unit">cm</span></div></div>
-        <div class="dim-box"><div class="dim-label">シート段数（片面）</div><div class="dim-val">2<span class="dim-unit">段</span></div></div>
+        <div class="dim-box"><div class="dim-label">垂木Bピッチ</div><div class="dim-val">45.5<span class="dim-unit">cm</span></div></div>
+        <div class="dim-box"><div class="dim-label">空気層</div><div class="dim-val">40<span class="dim-unit">mm</span></div></div>
         <div class="dim-box"><div class="dim-label">シート枚数（片面）</div><div class="dim-val">18<span class="dim-unit">枚</span></div></div>
       </div>
     </div>
@@ -197,24 +256,32 @@
         <div class="mat-nums"><div><span class="mat-qty">9</span><span class="mat-unit">箱</span></div><div class="mat-price">@2,100円</div><div class="mat-total">18,900円</div></div>
       </div>
       <div class="material-item">
-        <div><div class="mat-name">テクスビス・EPDM付（50本入）</div><div class="mat-sub">60mm / 垂木→ハゼ（鋼板）に食い込んで固定 / 垂木9本×ハゼ15本×両面</div></div>
-        <div class="mat-nums"><div><span class="mat-qty">6</span><span class="mat-unit">箱</span></div><div class="mat-price">@800円</div><div class="mat-total">4,800円</div></div>
-      </div>
-      <div class="material-item">
         <div><div class="mat-name">棟カバー用スクリュービス（100本入）</div><div class="mat-sub">棟カバー固定用 / 10枚×6本＝60本</div></div>
         <div class="mat-nums"><div><span class="mat-qty">1</span><span class="mat-unit">箱</span></div><div class="mat-price">@2,100円</div><div class="mat-total">2,100円</div></div>
       </div>
       <div class="material-item">
-        <div><div class="mat-name">変成シリコンコーキング</div><div class="mat-sub">屋外・金属対応 / ビス穴防水処理</div></div>
-        <div class="mat-nums"><div><span class="mat-qty">3</span><span class="mat-unit">本</span></div><div class="mat-price">@700円</div><div class="mat-total">2,100円</div></div>
+        <div><div class="mat-name">垂木B材（30×40mm・4m）</div><div class="mat-sub">縦方向・ハゼ脇 / 片面16本×2＝32本 / 3.48m → 4m材1本取り</div></div>
+        <div class="mat-nums"><div><span class="mat-qty">32</span><span class="mat-unit">本</span></div><div class="mat-price">@400円</div><div class="mat-total">12,800円</div></div>
       </div>
       <div class="material-item">
-        <div><div class="mat-name">垂木材（30×40mm・4m）</div><div class="mat-sub">横方向・6.85m / 片面9本×2＝18本 / 4m材を継いで使用</div></div>
-        <div class="mat-nums"><div><span class="mat-qty">36</span><span class="mat-unit">本</span></div><div class="mat-price">@400円</div><div class="mat-total">14,400円</div></div>
+        <div><div class="mat-name">新野地板（針葉樹構造用合板 12mm）</div><div class="mat-sub">910×1820mm・特類 / 片面4列×4段＝16枚×2＋予備4枚</div></div>
+        <div class="mat-nums"><div><span class="mat-qty">36</span><span class="mat-unit">枚</span></div><div class="mat-price">@1,500円</div><div class="mat-total">54,000円</div></div>
+      </div>
+      <div class="material-item">
+        <div><div class="mat-name">テクスビス・EPDM付（50本入）</div><div class="mat-sub">80mm / 垂木B→既存鋼板→既存野地板まで固定 / 15本×15ハゼ×両面</div></div>
+        <div class="mat-nums"><div><span class="mat-qty">9</span><span class="mat-unit">箱</span></div><div class="mat-price">@800円</div><div class="mat-total">7,200円</div></div>
+      </div>
+      <div class="material-item">
+        <div><div class="mat-name">野地板固定ビス（100本入）</div><div class="mat-sub">50〜60mm / 野地板→垂木B固定用 / 約1,000本</div></div>
+        <div class="mat-nums"><div><span class="mat-qty">10</span><span class="mat-unit">箱</span></div><div class="mat-price">@800円</div><div class="mat-total">8,000円</div></div>
+      </div>
+      <div class="material-item">
+        <div><div class="mat-name">変成シリコンコーキング</div><div class="mat-sub">屋外・金属対応 / テクスビス穴防水処理</div></div>
+        <div class="mat-nums"><div><span class="mat-qty">3</span><span class="mat-unit">本</span></div><div class="mat-price">@700円</div><div class="mat-total">2,100円</div></div>
       </div>
       <div class="materials-footer">
         <span class="materials-footer-label">概算合計（両面・税込）</span>
-        <span class="materials-footer-total">≈ 194,000円</span>
+        <span class="materials-footer-total">≈ 258,000円</span>
       </div>
       <div class="materials-note">※ 全て両面分の合計。ホームセンター参考価格・実売により変動あり。</div>
     </div>
@@ -223,10 +290,10 @@
     <div class="cell">
       <div class="cell-label">Method Notes — 工法ポイント</div>
       <ul class="method-list">
-        <li><span class="step-num">01</span><span>既存立平葺きのハゼの上に垂木を横方向に打つ。ハゼは二重鋼板で最も硬く安定した下地になる。</span></li>
-        <li><span class="step-num">02</span><span>テクスビス（60mm）で垂木からハゼ（鋼板）に食い込んで固定。打った直後に変成シリコンでビス頭を防水処理。</span></li>
-        <li><span class="step-num">03</span><span>オンデュリンは軒側から棟に向かって葺き上げる。縦重ね17cm、横重ね1山（約16cm）厳守。</span></li>
-        <li><span class="step-num">04</span><span>垂木ピッチ43cmは推奨60cm以内をクリア。ハゼピッチ45.5cmも垂木幅に対して十分余裕あり。</span></li>
+        <li><span class="step-num">01</span><span>垂木B（30×40mm）を既存ハゼの脇・縦方向（流れ方向）に配置。テクスビス80mmで既存鋼板→既存野地板まで貫通固定。ビス頭は変成シリコンで防水。</span></li>
+        <li><span class="step-num">02</span><span>垂木Bのピッチはハゼに沿って45.5cm。垂木B（40mm）がハゼ（35mm）より高いので野地板が傾かず安定する。</span></li>
+        <li><span class="step-num">03</span><span>垂木Bの上に新野地板（12mm構造用合板・特類）を張る。垂木Bに50〜60mmビスで固定。端部は防水テープ推奨。</span></li>
+        <li><span class="step-num">04</span><span>野地板の上にオンデュリンを軒側から棟に向かって千鳥で葺き上げる。縦重ね17cm、横重ね1山（約16cm）厳守。</span></li>
         <li><span class="step-num">05</span><span>棟部はオンデュリン専用棟カバーで仕上げ。重ね代15cmで両面の上端にまたがせて固定。</span></li>
       </ul>
     </div>
@@ -235,7 +302,7 @@
 
   <!-- 平面図：垂木打ち（上から） 全幅 -->
   <div style="border-top: 3px solid var(--ink); padding: 22px 28px 24px;">
-    <div class="cell-label" style="margin-bottom:14px;">Plan View — 垂木打ち（上から見た図）</div>
+    <div class="cell-label" style="margin-bottom:14px;">Plan View — 垂木B打ち（上から見た図）</div>
     <svg viewBox="-10 -18 780 290" width="100%" xmlns="http://www.w3.org/2000/svg">
 
       <!-- 屋根面の外枠 -->
@@ -253,21 +320,21 @@
       <line x1="648" y1="230" x2="656" y2="230" stroke="#1a1410" stroke-width="1"/>
       <text x="720" y="133" text-anchor="middle" font-size="9" fill="#1a1410" font-weight="bold" transform="rotate(90,720,133)">3.48 m（流れ）</text>
 
-      <!-- ハゼ（縦方向・流れ方向に走る）14本 45.5cmピッチ相当 -->
-      <line x1="99"  y1="30" x2="99"  y2="230" stroke="#8B7355" stroke-width="2" opacity="0.5"/>
-      <line x1="138" y1="30" x2="138" y2="230" stroke="#8B7355" stroke-width="2" opacity="0.5"/>
-      <line x1="177" y1="30" x2="177" y2="230" stroke="#8B7355" stroke-width="2" opacity="0.5"/>
-      <line x1="216" y1="30" x2="216" y2="230" stroke="#8B7355" stroke-width="2" opacity="0.5"/>
-      <line x1="255" y1="30" x2="255" y2="230" stroke="#8B7355" stroke-width="2" opacity="0.5"/>
-      <line x1="294" y1="30" x2="294" y2="230" stroke="#8B7355" stroke-width="2" opacity="0.5"/>
-      <line x1="333" y1="30" x2="333" y2="230" stroke="#8B7355" stroke-width="2" opacity="0.5"/>
-      <line x1="372" y1="30" x2="372" y2="230" stroke="#8B7355" stroke-width="2" opacity="0.5"/>
-      <line x1="411" y1="30" x2="411" y2="230" stroke="#8B7355" stroke-width="2" opacity="0.5"/>
-      <line x1="450" y1="30" x2="450" y2="230" stroke="#8B7355" stroke-width="2" opacity="0.5"/>
-      <line x1="489" y1="30" x2="489" y2="230" stroke="#8B7355" stroke-width="2" opacity="0.5"/>
-      <line x1="528" y1="30" x2="528" y2="230" stroke="#8B7355" stroke-width="2" opacity="0.5"/>
-      <line x1="567" y1="30" x2="567" y2="230" stroke="#8B7355" stroke-width="2" opacity="0.5"/>
-      <line x1="606" y1="30" x2="606" y2="230" stroke="#8B7355" stroke-width="2" opacity="0.5"/>
+      <!-- ハゼ（縦方向・流れ方向）14本 -->
+      <line x1="99"  y1="30" x2="99"  y2="230" stroke="#8B7355" stroke-width="3" opacity="0.6"/>
+      <line x1="138" y1="30" x2="138" y2="230" stroke="#8B7355" stroke-width="3" opacity="0.6"/>
+      <line x1="177" y1="30" x2="177" y2="230" stroke="#8B7355" stroke-width="3" opacity="0.6"/>
+      <line x1="216" y1="30" x2="216" y2="230" stroke="#8B7355" stroke-width="3" opacity="0.6"/>
+      <line x1="255" y1="30" x2="255" y2="230" stroke="#8B7355" stroke-width="3" opacity="0.6"/>
+      <line x1="294" y1="30" x2="294" y2="230" stroke="#8B7355" stroke-width="3" opacity="0.6"/>
+      <line x1="333" y1="30" x2="333" y2="230" stroke="#8B7355" stroke-width="3" opacity="0.6"/>
+      <line x1="372" y1="30" x2="372" y2="230" stroke="#8B7355" stroke-width="3" opacity="0.6"/>
+      <line x1="411" y1="30" x2="411" y2="230" stroke="#8B7355" stroke-width="3" opacity="0.6"/>
+      <line x1="450" y1="30" x2="450" y2="230" stroke="#8B7355" stroke-width="3" opacity="0.6"/>
+      <line x1="489" y1="30" x2="489" y2="230" stroke="#8B7355" stroke-width="3" opacity="0.6"/>
+      <line x1="528" y1="30" x2="528" y2="230" stroke="#8B7355" stroke-width="3" opacity="0.6"/>
+      <line x1="567" y1="30" x2="567" y2="230" stroke="#8B7355" stroke-width="3" opacity="0.6"/>
+      <line x1="606" y1="30" x2="606" y2="230" stroke="#8B7355" stroke-width="3" opacity="0.6"/>
 
       <!-- ハゼピッチ寸法（上） -->
       <line x1="99"  y1="20" x2="138" y2="20" stroke="#8B7355" stroke-width="0.8"/>
@@ -275,34 +342,40 @@
       <line x1="138" y1="17" x2="138" y2="23" stroke="#8B7355" stroke-width="0.8"/>
       <text x="118" y="14" text-anchor="middle" font-size="8" fill="#8B7355">45.5cm</text>
 
-      <!-- 新垂木（横方向・オンデュリンと直角）9本 43cmピッチ -->
-      <rect x="60" y="34"  width="580" height="8" fill="#c0392b" rx="1" opacity="0.85"/>
-      <rect x="60" y="58"  width="580" height="8" fill="#c0392b" rx="1" opacity="0.85"/>
-      <rect x="60" y="82"  width="580" height="8" fill="#c0392b" rx="1" opacity="0.85"/>
-      <rect x="60" y="106" width="580" height="8" fill="#c0392b" rx="1" opacity="0.85"/>
-      <rect x="60" y="130" width="580" height="8" fill="#c0392b" rx="1" opacity="0.85"/>
-      <rect x="60" y="154" width="580" height="8" fill="#c0392b" rx="1" opacity="0.85"/>
-      <rect x="60" y="178" width="580" height="8" fill="#c0392b" rx="1" opacity="0.85"/>
-      <rect x="60" y="202" width="580" height="8" fill="#c0392b" rx="1" opacity="0.85"/>
-      <rect x="60" y="220" width="580" height="8" fill="#c0392b" rx="1" opacity="0.85"/>
+      <!-- 垂木B（縦方向・ハゼ脇）細い帯で縦に走る -->
+      <!-- 各ハゼの左脇に垂木B（幅6px） -->
+      <rect x="60"  y="30" width="6" height="200" fill="#c0392b" rx="1" opacity="0.9"/>
+      <rect x="93"  y="30" width="6" height="200" fill="#c0392b" rx="1" opacity="0.9"/>
+      <rect x="132" y="30" width="6" height="200" fill="#c0392b" rx="1" opacity="0.9"/>
+      <rect x="171" y="30" width="6" height="200" fill="#c0392b" rx="1" opacity="0.9"/>
+      <rect x="210" y="30" width="6" height="200" fill="#c0392b" rx="1" opacity="0.9"/>
+      <rect x="249" y="30" width="6" height="200" fill="#c0392b" rx="1" opacity="0.9"/>
+      <rect x="288" y="30" width="6" height="200" fill="#c0392b" rx="1" opacity="0.9"/>
+      <rect x="327" y="30" width="6" height="200" fill="#c0392b" rx="1" opacity="0.9"/>
+      <rect x="366" y="30" width="6" height="200" fill="#c0392b" rx="1" opacity="0.9"/>
+      <rect x="405" y="30" width="6" height="200" fill="#c0392b" rx="1" opacity="0.9"/>
+      <rect x="444" y="30" width="6" height="200" fill="#c0392b" rx="1" opacity="0.9"/>
+      <rect x="483" y="30" width="6" height="200" fill="#c0392b" rx="1" opacity="0.9"/>
+      <rect x="522" y="30" width="6" height="200" fill="#c0392b" rx="1" opacity="0.9"/>
+      <rect x="561" y="30" width="6" height="200" fill="#c0392b" rx="1" opacity="0.9"/>
+      <rect x="600" y="30" width="6" height="200" fill="#c0392b" rx="1" opacity="0.9"/>
+      <rect x="634" y="30" width="6" height="200" fill="#c0392b" rx="1" opacity="0.9"/>
 
-      <!-- 垂木ピッチ寸法（左） -->
-      <line x1="48" y1="34"  x2="48" y2="58"  stroke="#c0392b" stroke-width="0.8"/>
-      <line x1="45" y1="34"  x2="51" y2="34"  stroke="#c0392b" stroke-width="0.8"/>
-      <line x1="45" y1="58"  x2="51" y2="58"  stroke="#c0392b" stroke-width="0.8"/>
-      <text x="20" y="49" text-anchor="middle" font-size="8" fill="#c0392b">43cm</text>
+      <!-- 垂木Bピッチ寸法（上） -->
+      <line x1="93"  y1="20" x2="132" y2="20" stroke="#c0392b" stroke-width="0.8"/>
+      <line x1="93"  y1="17" x2="93"  y2="23" stroke="#c0392b" stroke-width="0.8"/>
+      <line x1="132" y1="17" x2="132" y2="23" stroke="#c0392b" stroke-width="0.8"/>
+      <text x="112" y="10" text-anchor="middle" font-size="8" fill="#c0392b">45.5cm</text>
 
-      <!-- 垂木ラベル -->
-      <text x="350" y="133" text-anchor="middle" font-size="8" fill="#faf7f2" font-weight="bold" opacity="0.9">新垂木（横方向・オンデュリンと直角）片面9本</text>
+      <!-- テクスビス位置（垂木Bと既存ハゼの重なり部分） -->
+      <circle cx="96"  cy="100" r="2.5" fill="#e67e22" opacity="0.9"/>
+      <circle cx="96"  cy="160" r="2.5" fill="#e67e22" opacity="0.9"/>
+      <circle cx="135" cy="100" r="2.5" fill="#e67e22" opacity="0.9"/>
+      <circle cx="135" cy="160" r="2.5" fill="#e67e22" opacity="0.9"/>
+      <text x="155" y="106" font-size="8" fill="#e67e22">← テクスビス位置</text>
 
-      <!-- テクスビス位置（交点） -->
-      <circle cx="99"  cy="38"  r="2.5" fill="#e67e22" opacity="0.9"/>
-      <circle cx="138" cy="38"  r="2.5" fill="#e67e22" opacity="0.9"/>
-      <circle cx="99"  cy="62"  r="2.5" fill="#e67e22" opacity="0.9"/>
-      <circle cx="138" cy="62"  r="2.5" fill="#e67e22" opacity="0.9"/>
-      <circle cx="99"  cy="86"  r="2.5" fill="#e67e22" opacity="0.9"/>
-      <circle cx="138" cy="86"  r="2.5" fill="#e67e22" opacity="0.9"/>
-      <text x="178" y="44" font-size="9" fill="#e67e22" opacity="0.7">・・・ 各交点にテクスビス</text>
+      <!-- 垂木Bラベル -->
+      <text x="350" y="140" text-anchor="middle" font-size="8" fill="#c0392b" font-weight="bold">新垂木B（縦方向・ハゼ脇）片面15本</text>
 
       <!-- 棟・軒ラベル -->
       <rect x="310" y="33" width="80" height="16" fill="#1a1410" rx="2"/>
@@ -311,26 +384,209 @@
       <text x="350" y="226" text-anchor="middle" font-size="9" fill="#faf7f2">軒側 ▼</text>
 
       <!-- ハゼラベル -->
-      <text x="652" y="132" font-size="7.5" fill="#8B7355">← ハゼ</text>
-      <text x="652" y="142" font-size="7.5" fill="#8B7355">（流れ方向）</text>
+      <text x="652" y="128" font-size="7.5" fill="#8B7355">← ハゼ</text>
+      <text x="652" y="138" font-size="7.5" fill="#8B7355">（縦方向）</text>
+      <text x="652" y="155" font-size="7.5" fill="#c0392b">← 垂木B</text>
+      <text x="652" y="165" font-size="7.5" fill="#c0392b">（縦・ハゼ脇）</text>
 
     </svg>
 
     <div style="margin-top:10px; display:flex; gap:20px; flex-wrap:wrap; font-size:11px; align-items:center;">
       <div style="display:flex;align-items:center;gap:6px;">
-        <span style="display:inline-block;width:18px;height:4px;background:#8B7355;opacity:0.7;"></span>
-        <span>ハゼ（流れ方向）</span>
+        <span style="display:inline-block;width:4px;height:18px;background:#8B7355;opacity:0.7;border-radius:1px;"></span>
+        <span>ハゼ（縦方向・流れ方向）</span>
       </div>
       <div style="display:flex;align-items:center;gap:6px;">
-        <span style="display:inline-block;width:18px;height:8px;background:#c0392b;border-radius:1px;opacity:0.85;"></span>
-        <span>新垂木（横方向・9本）</span>
+        <span style="display:inline-block;width:4px;height:18px;background:#c0392b;opacity:0.9;border-radius:1px;"></span>
+        <span>垂木B（縦方向・ハゼ脇・15本）</span>
       </div>
       <div style="display:flex;align-items:center;gap:6px;">
         <span style="display:inline-block;width:8px;height:8px;background:#e67e22;border-radius:50%;"></span>
-        <span>テクスビス位置（交点）</span>
+        <span>テクスビス位置</span>
       </div>
     </div>
   </div>
+
+  <!-- 野地板割り付け図 -->
+  <div style="border-top: 3px solid var(--ink); padding: 28px 32px 32px;">
+    <div class="cell-label" style="margin-bottom:20px;">Sheathing Layout — 野地板割り付け（上から見た図・横向き貼り）</div>
+
+    <svg viewBox="-30 -20 880 420" width="100%" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+
+      <!-- 屋根面外枠 -->
+      <rect x="60" y="30" width="720" height="340" fill="#f5f0e8" stroke="#1a1410" stroke-width="1.5" rx="1"/>
+
+      <!-- 幅寸法（上） -->
+      <line x1="60"  y1="12" x2="780" y2="12" stroke="#1a1410" stroke-width="1"/>
+      <line x1="60"  y1="8"  x2="60"  y2="16" stroke="#1a1410" stroke-width="1"/>
+      <line x1="780" y1="8"  x2="780" y2="16" stroke="#1a1410" stroke-width="1"/>
+      <text x="420" y="8" text-anchor="middle" font-size="10" fill="#1a1410" font-weight="bold">6.85 m（棟方向）</text>
+
+      <!-- 流れ寸法（右） -->
+      <line x1="792" y1="30"  x2="792" y2="370" stroke="#1a1410" stroke-width="1"/>
+      <line x1="788" y1="30"  x2="796" y2="30"  stroke="#1a1410" stroke-width="1"/>
+      <line x1="788" y1="370" x2="796" y2="370" stroke="#1a1410" stroke-width="1"/>
+      <text x="820" y="203" text-anchor="middle" font-size="10" fill="#1a1410" font-weight="bold" transform="rotate(90,820,203)">3.48 m（流れ）</text>
+
+      <!-- ===== 垂木B（縦方向・ハゼ脇）===== -->
+      <!-- 幅720px=6850mm → 1px=9.51mm / ハゼ45.5cm=47.9px間隔 -->
+      <!-- ハゼ中心：x=60から47.9px間隔 -->
+
+      <!-- ハゼ（縦・茶色）14本 -->
+      <line x1="108" y1="30" x2="108" y2="370" stroke="#8B7355" stroke-width="3" opacity="0.6"/>
+      <line x1="156" y1="30" x2="156" y2="370" stroke="#8B7355" stroke-width="3" opacity="0.6"/>
+      <line x1="204" y1="30" x2="204" y2="370" stroke="#8B7355" stroke-width="3" opacity="0.6"/>
+      <line x1="252" y1="30" x2="252" y2="370" stroke="#8B7355" stroke-width="3" opacity="0.6"/>
+      <line x1="300" y1="30" x2="300" y2="370" stroke="#8B7355" stroke-width="3" opacity="0.6"/>
+      <line x1="348" y1="30" x2="348" y2="370" stroke="#8B7355" stroke-width="3" opacity="0.6"/>
+      <line x1="396" y1="30" x2="396" y2="370" stroke="#8B7355" stroke-width="3" opacity="0.6"/>
+      <line x1="444" y1="30" x2="444" y2="370" stroke="#8B7355" stroke-width="3" opacity="0.6"/>
+      <line x1="492" y1="30" x2="492" y2="370" stroke="#8B7355" stroke-width="3" opacity="0.6"/>
+      <line x1="540" y1="30" x2="540" y2="370" stroke="#8B7355" stroke-width="3" opacity="0.6"/>
+      <line x1="588" y1="30" x2="588" y2="370" stroke="#8B7355" stroke-width="3" opacity="0.6"/>
+      <line x1="636" y1="30" x2="636" y2="370" stroke="#8B7355" stroke-width="3" opacity="0.6"/>
+      <line x1="684" y1="30" x2="684" y2="370" stroke="#8B7355" stroke-width="3" opacity="0.6"/>
+      <line x1="732" y1="30" x2="732" y2="370" stroke="#8B7355" stroke-width="3" opacity="0.6"/>
+
+      <!-- 垂木B（ハゼ脇・縦）幅6px -->
+      <rect x="60"  y="30" width="6" height="340" fill="#c0392b" opacity="0.8"/>
+      <rect x="102" y="30" width="6" height="340" fill="#c0392b" opacity="0.8"/>
+      <rect x="150" y="30" width="6" height="340" fill="#c0392b" opacity="0.8"/>
+      <rect x="198" y="30" width="6" height="340" fill="#c0392b" opacity="0.8"/>
+      <rect x="246" y="30" width="6" height="340" fill="#c0392b" opacity="0.8"/>
+      <rect x="294" y="30" width="6" height="340" fill="#c0392b" opacity="0.8"/>
+      <rect x="342" y="30" width="6" height="340" fill="#c0392b" opacity="0.8"/>
+      <rect x="390" y="30" width="6" height="340" fill="#c0392b" opacity="0.8"/>
+      <rect x="438" y="30" width="6" height="340" fill="#c0392b" opacity="0.8"/>
+      <rect x="486" y="30" width="6" height="340" fill="#c0392b" opacity="0.8"/>
+      <rect x="534" y="30" width="6" height="340" fill="#c0392b" opacity="0.8"/>
+      <rect x="582" y="30" width="6" height="340" fill="#c0392b" opacity="0.8"/>
+      <rect x="630" y="30" width="6" height="340" fill="#c0392b" opacity="0.8"/>
+      <rect x="678" y="30" width="6" height="340" fill="#c0392b" opacity="0.8"/>
+      <rect x="726" y="30" width="6" height="340" fill="#c0392b" opacity="0.8"/>
+      <rect x="774" y="30" width="6" height="340" fill="#c0392b" opacity="0.8"/>
+
+      <!-- ハゼピッチ寸法（上） -->
+      <line x1="108" y1="20" x2="156" y2="20" stroke="#8B7355" stroke-width="0.8"/>
+      <line x1="108" y1="17" x2="108" y2="23" stroke="#8B7355" stroke-width="0.8"/>
+      <line x1="156" y1="17" x2="156" y2="23" stroke="#8B7355" stroke-width="0.8"/>
+      <text x="132" y="14" text-anchor="middle" font-size="8" fill="#8B7355">45.5cm</text>
+
+      <!-- ===== 野地板（横向き貼り・千鳥なし）===== -->
+      <!--
+        横向き：長辺1820mm=棟方向、短辺910mm=流れ方向
+        千鳥なし：各段とも同じ位置から貼る
+        流れ3480mm÷910mm=3.8段 → 4段（最終段は端数カット）
+        1段目（軒側）y=274〜370
+        2段目 y=178〜274
+        3段目 y=82〜178
+        4段目（棟側）y=30〜82（52px・端数カット）
+      -->
+
+      <!-- 1段目（軒側）y=274〜370 -->
+      <rect x="60"  y="274" width="192" height="96" fill="#f0d9a0" stroke="#1a1410" stroke-width="1" opacity="0.75" rx="1"/>
+      <rect x="252" y="274" width="192" height="96" fill="#e8cd90" stroke="#1a1410" stroke-width="1" opacity="0.75" rx="1"/>
+      <rect x="444" y="274" width="192" height="96" fill="#f0d9a0" stroke="#1a1410" stroke-width="1" opacity="0.75" rx="1"/>
+      <rect x="636" y="274" width="144" height="96" fill="#e8cd90" stroke="#1a1410" stroke-width="1" opacity="0.75" rx="1"/>
+
+      <!-- 2段目 y=178〜274 -->
+      <rect x="60"  y="178" width="192" height="96" fill="#f0d9a0" stroke="#1a1410" stroke-width="1" opacity="0.75" rx="1"/>
+      <rect x="252" y="178" width="192" height="96" fill="#e8cd90" stroke="#1a1410" stroke-width="1" opacity="0.75" rx="1"/>
+      <rect x="444" y="178" width="192" height="96" fill="#f0d9a0" stroke="#1a1410" stroke-width="1" opacity="0.75" rx="1"/>
+      <rect x="636" y="178" width="144" height="96" fill="#e8cd90" stroke="#1a1410" stroke-width="1" opacity="0.75" rx="1"/>
+
+      <!-- 3段目 y=82〜178 -->
+      <rect x="60"  y="82" width="192" height="96" fill="#f0d9a0" stroke="#1a1410" stroke-width="1" opacity="0.75" rx="1"/>
+      <rect x="252" y="82" width="192" height="96" fill="#e8cd90" stroke="#1a1410" stroke-width="1" opacity="0.75" rx="1"/>
+      <rect x="444" y="82" width="192" height="96" fill="#f0d9a0" stroke="#1a1410" stroke-width="1" opacity="0.75" rx="1"/>
+      <rect x="636" y="82" width="144" height="96" fill="#e8cd90" stroke="#1a1410" stroke-width="1" opacity="0.75" rx="1"/>
+
+      <!-- 4段目（棟側・端数カット）y=30〜82 -->
+      <rect x="60"  y="30" width="192" height="52" fill="#f0d9a0" stroke="#1a1410" stroke-width="1" opacity="0.75" rx="1"/>
+      <rect x="252" y="30" width="192" height="52" fill="#e8cd90" stroke="#1a1410" stroke-width="1" opacity="0.75" rx="1"/>
+      <rect x="444" y="30" width="192" height="52" fill="#f0d9a0" stroke="#1a1410" stroke-width="1" opacity="0.75" rx="1"/>
+      <rect x="636" y="30" width="144" height="52" fill="#e8cd90" stroke="#1a1410" stroke-width="1" opacity="0.75" rx="1"/>
+
+      <!-- 番号 1段目 -->
+      <text x="156" y="326" text-anchor="middle" font-size="10" fill="#8B6914" font-weight="bold">①</text>
+      <text x="348" y="326" text-anchor="middle" font-size="10" fill="#8B6914" font-weight="bold">②</text>
+      <text x="540" y="326" text-anchor="middle" font-size="10" fill="#8B6914" font-weight="bold">③</text>
+      <text x="708" y="326" text-anchor="middle" font-size="10" fill="#8B6914" font-weight="bold">④切</text>
+      <!-- 番号 2段目 -->
+      <text x="156" y="230" text-anchor="middle" font-size="10" fill="#8B6914" font-weight="bold">⑤</text>
+      <text x="348" y="230" text-anchor="middle" font-size="10" fill="#8B6914" font-weight="bold">⑥</text>
+      <text x="540" y="230" text-anchor="middle" font-size="10" fill="#8B6914" font-weight="bold">⑦</text>
+      <text x="708" y="230" text-anchor="middle" font-size="10" fill="#8B6914" font-weight="bold">⑧切</text>
+      <!-- 番号 3段目 -->
+      <text x="156" y="134" text-anchor="middle" font-size="10" fill="#8B6914" font-weight="bold">⑨</text>
+      <text x="348" y="134" text-anchor="middle" font-size="10" fill="#8B6914" font-weight="bold">⑩</text>
+      <text x="540" y="134" text-anchor="middle" font-size="10" fill="#8B6914" font-weight="bold">⑪</text>
+      <text x="708" y="134" text-anchor="middle" font-size="10" fill="#8B6914" font-weight="bold">⑫切</text>
+      <!-- 番号 4段目 -->
+      <text x="156" y="60" text-anchor="middle" font-size="10" fill="#8B6914" font-weight="bold">⑬切</text>
+      <text x="348" y="60" text-anchor="middle" font-size="10" fill="#8B6914" font-weight="bold">⑭切</text>
+      <text x="540" y="60" text-anchor="middle" font-size="10" fill="#8B6914" font-weight="bold">⑮切</text>
+      <text x="708" y="60" text-anchor="middle" font-size="10" fill="#8B6914" font-weight="bold">⑯切</text>
+
+      <!-- 流れ方向の目地線（段境界）-->
+      <line x1="60" y1="178" x2="780" y2="178" stroke="#1a1410" stroke-width="1.2" stroke-dasharray="5,3"/>
+      <line x1="60" y1="274" x2="780" y2="274" stroke="#1a1410" stroke-width="1.2" stroke-dasharray="5,3"/>
+      <line x1="60" y1="82"  x2="780" y2="82"  stroke="#1a1410" stroke-width="1.2" stroke-dasharray="5,3"/>
+
+      <!-- 合板1枚の寸法注記 -->
+      <line x1="60"  y1="384" x2="252" y2="384" stroke="#8B6914" stroke-width="0.8"/>
+      <line x1="60"  y1="380" x2="60"  y2="388" stroke="#8B6914" stroke-width="0.8"/>
+      <line x1="252" y1="380" x2="252" y2="388" stroke="#8B6914" stroke-width="0.8"/>
+      <text x="156" y="397" text-anchor="middle" font-size="8" fill="#8B6914">1820mm（長辺・棟方向）</text>
+
+      <line x1="46" y1="274" x2="46" y2="370" stroke="#8B6914" stroke-width="0.8"/>
+      <line x1="42" y1="274" x2="50" y2="274" stroke="#8B6914" stroke-width="0.8"/>
+      <line x1="42" y1="370" x2="50" y2="370" stroke="#8B6914" stroke-width="0.8"/>
+      <text x="32" y="326" text-anchor="middle" font-size="8" fill="#8B6914" transform="rotate(-90,32,326)">910mm（短辺・流れ方向）</text>
+
+
+
+      <!-- 棟・軒ラベル -->
+      <rect x="385" y="33" width="70" height="16" fill="#1a1410" rx="2"/>
+      <text x="420" y="45" text-anchor="middle" font-size="9" fill="#faf7f2" font-weight="bold">棟側 ▲</text>
+      <rect x="385" y="354" width="70" height="16" fill="#7f8c8d" rx="2"/>
+      <text x="420" y="366" text-anchor="middle" font-size="9" fill="#faf7f2">軒側 ▼</text>
+
+      <!-- ビス位置（代表） -->
+      <circle cx="102" cy="290" r="2.5" fill="#e67e22" opacity="0.9"/>
+      <circle cx="102" cy="330" r="2.5" fill="#e67e22" opacity="0.9"/>
+      <circle cx="150" cy="290" r="2.5" fill="#e67e22" opacity="0.9"/>
+      <circle cx="150" cy="330" r="2.5" fill="#e67e22" opacity="0.9"/>
+      <text x="165" y="296" font-size="8" fill="#e67e22">← ビス位置（垂木Bに固定）</text>
+
+    </svg>
+
+    <!-- 凡例 -->
+    <div style="margin-top:14px; display:flex; gap:20px; flex-wrap:wrap; font-size:11px; align-items:center;">
+      <div style="display:flex;align-items:center;gap:6px;">
+        <span style="display:inline-block;width:4px;height:18px;background:#8B7355;opacity:0.7;border-radius:1px;"></span>
+        <span>ハゼ（縦方向）</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;">
+        <span style="display:inline-block;width:4px;height:18px;background:#c0392b;opacity:0.8;border-radius:1px;"></span>
+        <span>垂木B（縦方向・ハゼ脇）</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;">
+        <span style="display:inline-block;width:18px;height:11px;background:#f0d9a0;border:1px solid #8B6914;border-radius:1px;opacity:0.9;"></span>
+        <span>構造用合板（横向き・1820mm×910mm）並べ貼り</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;">
+        <span style="display:inline-block;width:8px;height:8px;background:#e67e22;border-radius:50%;"></span>
+        <span>野地板固定ビス位置</span>
+      </div>
+    </div>
+
+    <div style="margin-top:12px; padding:11px 14px; background:var(--paper); border-left:3px solid var(--rust); font-size:12px; line-height:1.8;">
+      <span style="font-family:'DM Mono',monospace; color:var(--rust); font-size:10px; margin-right:8px;">NOTE</span>
+      合板は長辺（1820mm）を棟方向・横向きに貼る。流れ方向に910mmずつ4段。各垂木B（45.5cmピッチ）全箇所にビス止めすることで十分な固定力を確保。千鳥なし・並べ貼り。端数は棟側でカット。
+    </div>
+  </div>
+
 
   <!-- 葺き順図解 -->
   <div style="border-top: 3px solid var(--ink); padding: 28px 32px 32px;">
@@ -491,7 +747,7 @@
       </div>
       <div style="display:flex; align-items:center; gap:7px; font-size:11px;">
         <span style="display:inline-block; width:18px; height:2px; background:#c0392b; opacity:0.5; margin-bottom:2px;"></span>
-        <span>垂木位置（〜23cmピッチ）</span>
+        <span>野地板上（垂木B不要）</span>
       </div>
       <div style="display:flex; align-items:center; gap:7px; font-size:11px;">
         <span style="display:inline-block; width:8px; height:8px; background:#e67e22; border-radius:50%;"></span>
@@ -501,7 +757,7 @@
 
     <div style="margin-top:14px; padding:11px 14px; background:var(--paper); border-left:3px solid var(--rust); font-size:12px; line-height:1.8;">
       <span style="font-family:'DM Mono',monospace; color:var(--rust); font-size:10px; margin-right:8px;">NOTE</span>
-      これは片面（1面）の葺き順。反対面も同じ手順で繰り返す。最後に棟板（リッジ）を両面の上端にまたがせて固定。
+      これは片面（1面）の葺き順。野地板の上に軒側から棟に向かって千鳥で葺く。反対面も同じ手順で繰り返す。最後に棟カバーを両面の上端にまたがせて固定。
     </div>
   </div>
 
